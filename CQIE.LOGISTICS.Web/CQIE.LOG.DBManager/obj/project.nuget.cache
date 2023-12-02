@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nKxD8tECQurnVNlUNeCfJhAY8Md3dMCR6Y4U5ZF7qmrpcToLrMor/0oitdcvRRw/PbsFSvJJeufcmY7sCBgGzw==",
+  "dgSpecHash": "il04z35Y8nfNj6u3ncRMlf1UE5d2ZV8lSmZRQ5kRJG/aMspYJP4ePKqKyCn8JCEfGEmuFOkWSwqk+yjI/7O2fw==",
   "success": true,
-  "projectFilePath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj",
+  "projectFilePath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.20\\microsoft.aspnetcore.cryptography.internal.3.1.20.nupkg.sha512",
     "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.20\\microsoft.aspnetcore.cryptography.keyderivation.3.1.20.nupkg.sha512",

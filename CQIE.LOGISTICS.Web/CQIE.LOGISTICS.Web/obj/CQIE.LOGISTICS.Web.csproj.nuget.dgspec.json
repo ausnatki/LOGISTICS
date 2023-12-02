@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web.csproj": {}
+    "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web.csproj": {}
   },
   "projects": {
-    "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj": {
+    "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj",
+        "projectUniqueName": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj",
         "projectName": "CQIE.LOG.DBManager",
-        "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj",
+        "projectPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj",
         "packagesPath": "C:\\Users\\ausnatki\\.nuget\\packages\\",
-        "outputPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\obj\\",
+        "outputPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj": {
-                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj"
+              "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj": {
+                "projectPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj"
               },
-              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj": {
-                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj"
+              "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj": {
+                "projectPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj"
               }
             }
           }
@@ -83,14 +83,14 @@
         }
       }
     },
-    "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj": {
+    "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj",
+        "projectUniqueName": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj",
         "projectName": "CQIE.LOG.Models",
-        "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj",
+        "projectPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj",
         "packagesPath": "C:\\Users\\ausnatki\\.nuget\\packages\\",
-        "outputPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\obj\\",
+        "outputPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -151,14 +151,14 @@
         }
       }
     },
-    "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\CQIE.LOG.Services.csproj": {
+    "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\CQIE.LOG.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\CQIE.LOG.Services.csproj",
+        "projectUniqueName": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\CQIE.LOG.Services.csproj",
         "projectName": "CQIE.LOG.Services",
-        "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\CQIE.LOG.Services.csproj",
+        "projectPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\CQIE.LOG.Services.csproj",
         "packagesPath": "C:\\Users\\ausnatki\\.nuget\\packages\\",
-        "outputPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\obj\\",
+        "outputPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -179,11 +179,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj": {
-                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj"
+              "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj": {
+                "projectPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj"
               },
-              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj": {
-                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj"
+              "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj": {
+                "projectPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj"
               }
             }
           }
@@ -222,14 +222,14 @@
         }
       }
     },
-    "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\CQIE.LOG.Tool.csproj": {
+    "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\CQIE.LOG.Tool.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\CQIE.LOG.Tool.csproj",
+        "projectUniqueName": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\CQIE.LOG.Tool.csproj",
         "projectName": "CQIE.LOG.Tool",
-        "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\CQIE.LOG.Tool.csproj",
+        "projectPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\CQIE.LOG.Tool.csproj",
         "packagesPath": "C:\\Users\\ausnatki\\.nuget\\packages\\",
-        "outputPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\obj\\",
+        "outputPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -280,14 +280,14 @@
         }
       }
     },
-    "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj": {
+    "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj",
+        "projectUniqueName": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj",
         "projectName": "CQIE.LOG.Utility",
-        "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj",
+        "projectPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj",
         "packagesPath": "C:\\Users\\ausnatki\\.nuget\\packages\\",
-        "outputPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\obj\\",
+        "outputPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -344,14 +344,14 @@
         }
       }
     },
-    "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web.csproj": {
+    "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web.csproj",
+        "projectUniqueName": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web.csproj",
         "projectName": "CQIE.LOGISTICS.Web",
-        "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web.csproj",
+        "projectPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web.csproj",
         "packagesPath": "C:\\Users\\ausnatki\\.nuget\\packages\\",
-        "outputPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web\\obj\\",
+        "outputPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -372,20 +372,20 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj": {
-                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj"
+              "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj": {
+                "projectPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj"
               },
-              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj": {
-                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj"
+              "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj": {
+                "projectPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj"
               },
-              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\CQIE.LOG.Services.csproj": {
-                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\CQIE.LOG.Services.csproj"
+              "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\CQIE.LOG.Services.csproj": {
+                "projectPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\CQIE.LOG.Services.csproj"
               },
-              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\CQIE.LOG.Tool.csproj": {
-                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\CQIE.LOG.Tool.csproj"
+              "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\CQIE.LOG.Tool.csproj": {
+                "projectPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\CQIE.LOG.Tool.csproj"
               },
-              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj": {
-                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj"
+              "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj": {
+                "projectPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj"
               }
             }
           }

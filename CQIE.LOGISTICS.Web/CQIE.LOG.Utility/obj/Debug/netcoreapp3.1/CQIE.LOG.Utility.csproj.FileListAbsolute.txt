@@ -8,3 +8,13 @@ D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Utility\obj\Debug\netcoreapp3.1\CQIE.L
 D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Utility\obj\Debug\netcoreapp3.1\CQIE.LOG.Utility.dll
 D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Utility\obj\Debug\netcoreapp3.1\CQIE.LOG.Utility.pdb
 D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Utility\obj\Debug\netcoreapp3.1\CQIE.LOG.Utility.csproj.AssemblyReference.cache
+D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOG.Utility\bin\Debug\netcoreapp3.1\CQIE.LOG.Utility.deps.json
+D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOG.Utility\bin\Debug\netcoreapp3.1\CQIE.LOG.Utility.dll
+D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOG.Utility\bin\Debug\netcoreapp3.1\CQIE.LOG.Utility.pdb
+D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOG.Utility\obj\Debug\netcoreapp3.1\CQIE.LOG.Utility.csproj.AssemblyReference.cache
+D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOG.Utility\obj\Debug\netcoreapp3.1\CQIE.LOG.Utility.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOG.Utility\obj\Debug\netcoreapp3.1\CQIE.LOG.Utility.AssemblyInfoInputs.cache
+D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOG.Utility\obj\Debug\netcoreapp3.1\CQIE.LOG.Utility.AssemblyInfo.cs
+D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOG.Utility\obj\Debug\netcoreapp3.1\CQIE.LOG.Utility.csproj.CoreCompileInputs.cache
+D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOG.Utility\obj\Debug\netcoreapp3.1\CQIE.LOG.Utility.dll
+D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOG.Utility\obj\Debug\netcoreapp3.1\CQIE.LOG.Utility.pdb

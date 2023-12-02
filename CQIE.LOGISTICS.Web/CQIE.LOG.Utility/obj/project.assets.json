@@ -99,11 +99,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj",
+      "projectUniqueName": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj",
       "projectName": "CQIE.LOG.Utility",
-      "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj",
+      "projectPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj",
       "packagesPath": "C:\\Users\\ausnatki\\.nuget\\packages\\",
-      "outputPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\obj\\",
+      "outputPath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

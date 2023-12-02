@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sFvdI5WLM1IB6BpMvGMO1hscfX/j0kdTTEHNre3qDqPUupyj4EYCWD9Q7Y7fKTJ2F1GtDjs4Ud5/41lCmEeZcw==",
+  "dgSpecHash": "9/t16yzDGmaFxDvt+VRbz/tu/AFBgJAhhCz8VVhxfBxzyPbVarP3hZfcRwj/dBkUJ/mqmUc+F7HQj9FFAV5+zA==",
   "success": true,
-  "projectFilePath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj",
+  "projectFilePath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.20\\microsoft.extensions.configuration.3.1.20.nupkg.sha512",
     "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.20\\microsoft.extensions.configuration.abstractions.3.1.20.nupkg.sha512",
