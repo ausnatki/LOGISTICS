@@ -1,0 +1,453 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web.csproj": {}
+  },
+  "projects": {
+    "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj",
+        "projectName": "CQIE.LOG.DBManager",
+        "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj",
+        "packagesPath": "C:\\Users\\ausnatki\\.nuget\\packages\\",
+        "outputPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ausnatki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj": {
+                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj"
+              },
+              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj": {
+                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.20, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.20, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj",
+        "projectName": "CQIE.LOG.Models",
+        "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj",
+        "packagesPath": "C:\\Users\\ausnatki\\.nuget\\packages\\",
+        "outputPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ausnatki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.20, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\CQIE.LOG.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\CQIE.LOG.Services.csproj",
+        "projectName": "CQIE.LOG.Services",
+        "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\CQIE.LOG.Services.csproj",
+        "packagesPath": "C:\\Users\\ausnatki\\.nuget\\packages\\",
+        "outputPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ausnatki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj": {
+                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj"
+              },
+              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj": {
+                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.20, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\CQIE.LOG.Tool.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\CQIE.LOG.Tool.csproj",
+        "projectName": "CQIE.LOG.Tool",
+        "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\CQIE.LOG.Tool.csproj",
+        "packagesPath": "C:\\Users\\ausnatki\\.nuget\\packages\\",
+        "outputPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ausnatki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj",
+        "projectName": "CQIE.LOG.Utility",
+        "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj",
+        "packagesPath": "C:\\Users\\ausnatki\\.nuget\\packages\\",
+        "outputPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ausnatki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.1.20, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web.csproj",
+        "projectName": "CQIE.LOGISTICS.Web",
+        "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web.csproj",
+        "packagesPath": "C:\\Users\\ausnatki\\.nuget\\packages\\",
+        "outputPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ausnatki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj": {
+                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.DBManager\\CQIE.LOG.DBManager.csproj"
+              },
+              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj": {
+                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Models\\CQIE.LOG.Models.csproj"
+              },
+              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\CQIE.LOG.Services.csproj": {
+                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\CQIE.LOG.Services.csproj"
+              },
+              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\CQIE.LOG.Tool.csproj": {
+                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Tool\\CQIE.LOG.Tool.csproj"
+              },
+              "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj": {
+                "projectPath": "D:\\visual\\web\\CQIE.LOGISTICS.Web\\CQIE.LOG.Utility\\CQIE.LOG.Utility.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.20, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.20, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.1.20, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

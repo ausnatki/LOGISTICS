@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    List<CQIE.LOG.Models.SystemMenu> menu = null;
+    var service = this.Context.RequestServices.GetService(typeof(CQIE.LOG.Services.ISystemMenuService)) as CQIE.LOG.Services.ISystemMenuService;//获取服务
+    if (service != null)
+    {
+        menu = service.GetSystemMenus().ToList();
+    }
+}
+
+<ul class="layui-nav layui-nav-tree" lay-filter="test">
+
+    @foreach (var temp in menu)
+    {
+        int partentid = temp.Id;
+        if (temp.ParentID != null) continue;
+    <li class="layui-nav-item layui-nav-itemed">
+        <a class="" href="@temp.Url">@temp.Name</a>
+        @{
+            foreach (var temp2 in menu)
+            {
+                if (temp2.ParentID == partentid)
+                {
+                    <dl class="layui-nav-child">
+                        <dd><a href="@temp2.Url">@temp2.Name</a></dd>
+                    </dl>
+                }
+            }
+        }
+    </li>
+    }
+
+    <li class="layui-nav-item"><a href="~/Account/Logout">退出</a></li>
+</ul>
+

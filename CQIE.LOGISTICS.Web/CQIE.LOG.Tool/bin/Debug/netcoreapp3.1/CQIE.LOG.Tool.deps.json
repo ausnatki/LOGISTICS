@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "CQIE.LOG.Tool/1.0.0": {
+        "runtime": {
+          "CQIE.LOG.Tool.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CQIE.LOG.Tool/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

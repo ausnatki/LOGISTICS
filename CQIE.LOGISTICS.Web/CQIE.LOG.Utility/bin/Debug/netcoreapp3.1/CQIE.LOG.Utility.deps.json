@@ -1,0 +1,77 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "CQIE.LOG.Utility/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "3.1.20"
+        },
+        "runtime": {
+          "CQIE.LOG.Utility.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration/3.1.20": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "3.1.20"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.dll": {
+            "assemblyVersion": "3.1.20.0",
+            "fileVersion": "3.100.2021.47203"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/3.1.20": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "3.1.20"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "assemblyVersion": "3.1.20.0",
+            "fileVersion": "3.100.2021.47203"
+          }
+        }
+      },
+      "Microsoft.Extensions.Primitives/3.1.20": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "3.1.20.0",
+            "fileVersion": "3.100.2021.47203"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CQIE.LOG.Utility/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Configuration/3.1.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qN871hvjHs9pqVW1E8dXzww3hDXmAtSC0Mjvht+2choJN+KKLL/mQpX2Egkp9Wvox005bfmBrFW7svDDTjmuoQ==",
+      "path": "microsoft.extensions.configuration/3.1.20",
+      "hashPath": "microsoft.extensions.configuration.3.1.20.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/3.1.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TpevBA1qF8XuuP5md8As81SHfhtAsVocH/i76F1WjYoOBpA9nwC3dmpN/YDi89efRzU6qk5AYvZ1ldCONtAYSQ==",
+      "path": "microsoft.extensions.configuration.abstractions/3.1.20",
+      "hashPath": "microsoft.extensions.configuration.abstractions.3.1.20.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Primitives/3.1.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RHHWUHzW8y+dyNBIBmo2EQbpCC6xFQcFMpLhNcpzw3zP0rxJdhmTTdy5eXvhlkNi3vqM4Af5Qqb5xgYwqaoaJQ==",
+      "path": "microsoft.extensions.primitives/3.1.20",
+      "hashPath": "microsoft.extensions.primitives.3.1.20.nupkg.sha512"
+    }
+  }
+}

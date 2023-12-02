@@ -1,0 +1,10 @@
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Tool\bin\Debug\netcoreapp3.1\CQIE.LOG.Tool.deps.json
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Tool\bin\Debug\netcoreapp3.1\CQIE.LOG.Tool.dll
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Tool\bin\Debug\netcoreapp3.1\CQIE.LOG.Tool.pdb
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Tool\obj\Debug\netcoreapp3.1\CQIE.LOG.Tool.GeneratedMSBuildEditorConfig.editorconfig
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Tool\obj\Debug\netcoreapp3.1\CQIE.LOG.Tool.AssemblyInfoInputs.cache
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Tool\obj\Debug\netcoreapp3.1\CQIE.LOG.Tool.AssemblyInfo.cs
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Tool\obj\Debug\netcoreapp3.1\CQIE.LOG.Tool.csproj.CoreCompileInputs.cache
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Tool\obj\Debug\netcoreapp3.1\CQIE.LOG.Tool.dll
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Tool\obj\Debug\netcoreapp3.1\CQIE.LOG.Tool.pdb
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Tool\obj\Debug\netcoreapp3.1\CQIE.LOG.Tool.csproj.AssemblyReference.cache

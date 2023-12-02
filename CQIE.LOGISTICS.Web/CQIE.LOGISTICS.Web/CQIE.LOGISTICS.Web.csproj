@@ -1,0 +1,233 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\node_modules\**" />
+    <Content Remove="wwwroot\node_modules\**" />
+    <EmbeddedResource Remove="wwwroot\node_modules\**" />
+    <None Remove="wwwroot\node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\lib\node_modules\.package-lock.json" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\bench.js" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\index.js" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\lib\abort.js" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\lib\async.js" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\lib\defer.js" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\lib\iterate.js" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\lib\readable_asynckit.js" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\lib\readable_parallel.js" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\lib\readable_serial.js" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\lib\readable_serial_ordered.js" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\lib\state.js" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\lib\streamify.js" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\lib\terminator.js" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\LICENSE" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\package.json" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\parallel.js" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\README.md" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\serial.js" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\serialOrdered.js" />
+    <Content Include="wwwroot\lib\node_modules\asynckit\stream.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\CHANGELOG.md" />
+    <Content Include="wwwroot\lib\node_modules\axios\dist\axios.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\dist\axios.js.map" />
+    <Content Include="wwwroot\lib\node_modules\axios\dist\axios.min.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\dist\axios.min.js.map" />
+    <Content Include="wwwroot\lib\node_modules\axios\dist\browser\axios.cjs" />
+    <Content Include="wwwroot\lib\node_modules\axios\dist\browser\axios.cjs.map" />
+    <Content Include="wwwroot\lib\node_modules\axios\dist\esm\axios.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\dist\esm\axios.js.map" />
+    <Content Include="wwwroot\lib\node_modules\axios\dist\esm\axios.min.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\dist\esm\axios.min.js.map" />
+    <Content Include="wwwroot\lib\node_modules\axios\dist\node\axios.cjs" />
+    <Content Include="wwwroot\lib\node_modules\axios\dist\node\axios.cjs.map" />
+    <Content Include="wwwroot\lib\node_modules\axios\index.d.cts" />
+    <Content Include="wwwroot\lib\node_modules\axios\index.d.ts" />
+    <Content Include="wwwroot\lib\node_modules\axios\index.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\adapters\adapters.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\adapters\http.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\adapters\README.md" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\adapters\xhr.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\axios.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\cancel\CanceledError.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\cancel\CancelToken.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\cancel\isCancel.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\core\Axios.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\core\AxiosError.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\core\AxiosHeaders.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\core\buildFullPath.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\core\dispatchRequest.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\core\InterceptorManager.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\core\mergeConfig.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\core\README.md" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\core\settle.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\core\transformData.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\defaults\index.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\defaults\transitional.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\env\classes\FormData.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\env\data.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\env\README.md" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\AxiosTransformStream.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\AxiosURLSearchParams.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\bind.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\buildURL.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\callbackify.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\combineURLs.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\cookies.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\deprecatedMethod.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\formDataToJSON.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\formDataToStream.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\fromDataURI.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\HttpStatusCode.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\isAbsoluteURL.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\isAxiosError.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\isURLSameOrigin.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\null.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\parseHeaders.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\parseProtocol.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\readBlob.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\README.md" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\speedometer.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\spread.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\throttle.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\toFormData.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\toURLEncodedForm.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\validator.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\helpers\ZlibHeaderTransformStream.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\platform\browser\classes\Blob.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\platform\browser\classes\FormData.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\platform\browser\classes\URLSearchParams.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\platform\browser\index.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\platform\common\utils.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\platform\index.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\platform\node\classes\FormData.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\platform\node\classes\URLSearchParams.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\platform\node\index.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\lib\utils.js" />
+    <Content Include="wwwroot\lib\node_modules\axios\LICENSE" />
+    <Content Include="wwwroot\lib\node_modules\axios\MIGRATION_GUIDE.md" />
+    <Content Include="wwwroot\lib\node_modules\axios\package.json" />
+    <Content Include="wwwroot\lib\node_modules\axios\README.md" />
+    <Content Include="wwwroot\lib\node_modules\axios\SECURITY.md" />
+    <Content Include="wwwroot\lib\node_modules\combined-stream\lib\combined_stream.js" />
+    <Content Include="wwwroot\lib\node_modules\combined-stream\License" />
+    <Content Include="wwwroot\lib\node_modules\combined-stream\package.json" />
+    <Content Include="wwwroot\lib\node_modules\combined-stream\Readme.md" />
+    <Content Include="wwwroot\lib\node_modules\combined-stream\yarn.lock" />
+    <Content Include="wwwroot\lib\node_modules\delayed-stream\.npmignore" />
+    <Content Include="wwwroot\lib\node_modules\delayed-stream\lib\delayed_stream.js" />
+    <Content Include="wwwroot\lib\node_modules\delayed-stream\License" />
+    <Content Include="wwwroot\lib\node_modules\delayed-stream\Makefile" />
+    <Content Include="wwwroot\lib\node_modules\delayed-stream\package.json" />
+    <Content Include="wwwroot\lib\node_modules\delayed-stream\Readme.md" />
+    <Content Include="wwwroot\lib\node_modules\follow-redirects\debug.js" />
+    <Content Include="wwwroot\lib\node_modules\follow-redirects\http.js" />
+    <Content Include="wwwroot\lib\node_modules\follow-redirects\https.js" />
+    <Content Include="wwwroot\lib\node_modules\follow-redirects\index.js" />
+    <Content Include="wwwroot\lib\node_modules\follow-redirects\LICENSE" />
+    <Content Include="wwwroot\lib\node_modules\follow-redirects\package.json" />
+    <Content Include="wwwroot\lib\node_modules\follow-redirects\README.md" />
+    <Content Include="wwwroot\lib\node_modules\form-data\index.d.ts" />
+    <Content Include="wwwroot\lib\node_modules\form-data\lib\browser.js" />
+    <Content Include="wwwroot\lib\node_modules\form-data\lib\form_data.js" />
+    <Content Include="wwwroot\lib\node_modules\form-data\lib\populate.js" />
+    <Content Include="wwwroot\lib\node_modules\form-data\License" />
+    <Content Include="wwwroot\lib\node_modules\form-data\package.json" />
+    <Content Include="wwwroot\lib\node_modules\form-data\Readme.md" />
+    <Content Include="wwwroot\lib\node_modules\form-data\README.md.bak" />
+    <Content Include="wwwroot\lib\node_modules\layui\dist\css\layui.css" />
+    <Content Include="wwwroot\lib\node_modules\layui\dist\css\layui.css.map" />
+    <Content Include="wwwroot\lib\node_modules\layui\dist\font\iconfont.eot" />
+    <Content Include="wwwroot\lib\node_modules\layui\dist\font\iconfont.svg" />
+    <Content Include="wwwroot\lib\node_modules\layui\dist\font\iconfont.ttf" />
+    <Content Include="wwwroot\lib\node_modules\layui\dist\font\iconfont.woff" />
+    <Content Include="wwwroot\lib\node_modules\layui\dist\font\iconfont.woff2" />
+    <Content Include="wwwroot\lib\node_modules\layui\dist\layui.js" />
+    <Content Include="wwwroot\lib\node_modules\layui\dist\layui.js.map" />
+    <Content Include="wwwroot\lib\node_modules\layui\LICENSE" />
+    <Content Include="wwwroot\lib\node_modules\layui\package.json" />
+    <Content Include="wwwroot\lib\node_modules\layui\README.md" />
+    <Content Include="wwwroot\lib\node_modules\mime-db\db.json" />
+    <Content Include="wwwroot\lib\node_modules\mime-db\HISTORY.md" />
+    <Content Include="wwwroot\lib\node_modules\mime-db\index.js" />
+    <Content Include="wwwroot\lib\node_modules\mime-db\LICENSE" />
+    <Content Include="wwwroot\lib\node_modules\mime-db\package.json" />
+    <Content Include="wwwroot\lib\node_modules\mime-db\README.md" />
+    <Content Include="wwwroot\lib\node_modules\mime-types\HISTORY.md" />
+    <Content Include="wwwroot\lib\node_modules\mime-types\index.js" />
+    <Content Include="wwwroot\lib\node_modules\mime-types\LICENSE" />
+    <Content Include="wwwroot\lib\node_modules\mime-types\package.json" />
+    <Content Include="wwwroot\lib\node_modules\mime-types\README.md" />
+    <Content Include="wwwroot\lib\node_modules\proxy-from-env\.eslintrc" />
+    <Content Include="wwwroot\lib\node_modules\proxy-from-env\.travis.yml" />
+    <Content Include="wwwroot\lib\node_modules\proxy-from-env\index.js" />
+    <Content Include="wwwroot\lib\node_modules\proxy-from-env\LICENSE" />
+    <Content Include="wwwroot\lib\node_modules\proxy-from-env\package.json" />
+    <Content Include="wwwroot\lib\node_modules\proxy-from-env\README.md" />
+    <Content Include="wwwroot\lib\node_modules\proxy-from-env\test.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\my_layout.js\index.js" />
+    <None Include="wwwroot\js\my_sysrole\SysRole_List.js" />
+    <None Include="wwwroot\js\my_sysuser\SysUser_Add.js" />
+    <None Include="wwwroot\js\my_sysuser\SysUser_List.js" />
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.20" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.20" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.20">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.20" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.20" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CQIE.LOG.DBManager\CQIE.LOG.DBManager.csproj" />
+    <ProjectReference Include="..\CQIE.LOG.Models\CQIE.LOG.Models.csproj" />
+    <ProjectReference Include="..\CQIE.LOG.Services\CQIE.LOG.Services.csproj" />
+    <ProjectReference Include="..\CQIE.LOG.Tool\CQIE.LOG.Tool.csproj" />
+    <ProjectReference Include="..\CQIE.LOG.Utility\CQIE.LOG.Utility.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Account\" />
+    <Folder Include="wwwroot\js\新文件夹\新文件夹\" />
+  </ItemGroup>
+
+</Project>

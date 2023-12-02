@@ -1,0 +1,9 @@
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Models\bin\Debug\netcoreapp3.1\CQIE.LOG.Models.deps.json
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Models\bin\Debug\netcoreapp3.1\CQIE.LOG.Models.dll
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Models\bin\Debug\netcoreapp3.1\CQIE.LOG.Models.pdb
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Models\obj\Debug\netcoreapp3.1\CQIE.LOG.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Models\obj\Debug\netcoreapp3.1\CQIE.LOG.Models.AssemblyInfoInputs.cache
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Models\obj\Debug\netcoreapp3.1\CQIE.LOG.Models.AssemblyInfo.cs
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Models\obj\Debug\netcoreapp3.1\CQIE.LOG.Models.csproj.CoreCompileInputs.cache
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Models\obj\Debug\netcoreapp3.1\CQIE.LOG.Models.dll
+D:\visual\web\CQIE.LOGISTICS.Web\CQIE.LOG.Models\obj\Debug\netcoreapp3.1\CQIE.LOG.Models.pdb
