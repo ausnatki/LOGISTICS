@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CQIE.LOG.DBManager
 {
-    public partial class LOGDbContext
+    public partial class LOGDbContext 
     {
         public DbSet<CQIE.LOG.Models.SystemMenu> SystemMenus { get; set; }
         public DbSet<CQIE.LOG.Models.SysOperation> SysOperations { get; set; }

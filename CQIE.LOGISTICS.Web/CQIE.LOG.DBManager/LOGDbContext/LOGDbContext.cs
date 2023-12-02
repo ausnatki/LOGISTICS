@@ -63,7 +63,15 @@ namespace CQIE.LOG.DBManager
             });
 
             this.IdentityModelCreating(modelBuilder);
+
+            AdditionalModelConfiguration_hyk(modelBuilder);
+
+
+
+
         }
+
+        partial void AdditionalModelConfiguration_hyk(ModelBuilder modelBuilder);
 
         private void IdentityModelCreating(ModelBuilder modelBuilder)
         {
