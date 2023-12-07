@@ -19,7 +19,6 @@ namespace CQIE.LOG.Models.Delivery
         public Car Car { get; set; }
         public Delivery_Man Delivery_Man { get; set; }
         public Waybill.WayBill WayBill { get; set; }
-
         public Expenses.Expenses Expenses { get; set; }
 
     }
