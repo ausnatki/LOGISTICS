@@ -7,6 +7,6 @@ namespace CQIE.LOG.Models.Waybill
     public class WayBill
     {
         public int Id { get; set; }
-        public Delivery.Delivery Delivery { get; set; }//1对1
+        public Delivery.Delivery_Order Delivery { get; set; }//1对1
     }
 }

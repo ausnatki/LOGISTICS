@@ -12,11 +12,10 @@ namespace CQIE.LOG.DBManager
         // 继续编写 OnModelCreating 方法的内容
         partial void AdditionalModelConfiguration_hyk(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CQIE.LOG.Models.Delivery.Delivery>(entity =>
+            modelBuilder.Entity<CQIE.LOG.Models.Delivery.Delivery_Order>(entity =>
             {
                 entity.HasKey(c => c.Id);
-                entity.HasOne(c => c.WayBill).WithOne(c => c.Delivery).HasForeignKey<Delivery>(d => d.WayBill_Id);
-                entity.HasOne(c => c.carType).WithMany(c => c.deliveries).HasForeignKey(c=>c.CarType_Id);
+                entity.HasOne(c => c.WayBill).WithOne(c => c.Delivery).HasForeignKey<Delivery_Order>(d => d.WayBill_Id);
                 entity.HasOne(c => c.Car).WithMany(c => c.deliveries).HasForeignKey(c => c.Car_Id);
                 entity.HasOne(c => c.Delivery_Man).WithMany(c => c.deliveries).HasForeignKey(c => c.Delivery_man_Id);
             });
@@ -24,6 +23,7 @@ namespace CQIE.LOG.DBManager
             modelBuilder.Entity<CQIE.LOG.Models.Delivery.Car>(entity =>
             {
                 entity.HasKey(c => c.Id);
+                entity.HasOne(c => c.CarType).WithMany(c => c.cars).HasForeignKey(c => c.CarType_Id);
             });
 
             modelBuilder.Entity<CQIE.LOG.Models.Delivery.CarType>(entity =>
