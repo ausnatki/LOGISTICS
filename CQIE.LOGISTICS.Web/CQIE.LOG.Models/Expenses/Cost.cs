@@ -18,7 +18,6 @@ namespace CQIE.LOG.Models.Expenses
         public decimal Maintain { get; set; }//车辆维护费
         public decimal Other { get; set; }//其他费用
         public string Explain { get; set; }//费用说明
-
         public Expenses Expenses { get; set; }
     }
 }

@@ -15,7 +15,8 @@ namespace CQIE.LOG.Models.Delivery
         public int Id { get; set; }
         public string CarNumber { get; set; }//车牌号
         public int State { get; set; }
-
-        public List<Delivery> deliveries { get; set; }
+        public int CarType_Id { get; set; }
+        public CarType CarType { get; set; }
+        public List<Delivery_Order> deliveries { get; set; }
     }
 }
