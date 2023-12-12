@@ -1,3 +1,4 @@
+using CQIE.LOG.Models.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +35,7 @@ namespace CQIE.LOGISTICS.Web
             services.AddDbContext<CQIE.LOG.DBManager.LOGDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LOGDB")));
 
             services.AddDefaultIdentity<CQIE.LOG.Models.Identity.SysUser>(options => options.SignIn.RequireConfirmedAccount = false)
+                    .AddRoles<SysRole>()
                     .AddEntityFrameworkStores<CQIE.LOG.DBManager.LOGDbContext>();
 
             #region ◊¢≤·ORMœ‡πÿ¿‡

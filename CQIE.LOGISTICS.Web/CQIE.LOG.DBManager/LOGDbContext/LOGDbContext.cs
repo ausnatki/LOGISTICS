@@ -66,10 +66,10 @@ namespace CQIE.LOG.DBManager
 
             AdditionalModelConfiguration_hyk(modelBuilder);
 
-
-
-
+            AdditionalModelConfiguration_WayBill(modelBuilder);
         }
+
+        partial void AdditionalModelConfiguration_WayBill(ModelBuilder modelBuilder);
 
         partial void AdditionalModelConfiguration_hyk(ModelBuilder modelBuilder);
 

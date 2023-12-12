@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace CQIE.LOGISTICS.Web.Controllers
     {
         private static System.Text.StringBuilder m_Resp = new System.Text.StringBuilder();
         private Microsoft.AspNetCore.Identity.UserManager<CQIE.LOG.Models.Identity.SysUser> m_UserManager;
+
+        [Authorize(Roles = "admin")]
         public IActionResult Index2([FromServices] CQIE.LOG.DBManager.IDbManager dbManager)
         {
             return View();
