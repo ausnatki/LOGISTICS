@@ -46,9 +46,9 @@ namespace CQIE.LOGISTICS.Web
             #endregion
 
             services.AddScoped<CQIE.LOG.Services.ISystemMenuService, CQIE.LOG.Services.ISystemMenuServiceImp>();
-            //services.AddScoped<CQIE.LOG.Services.IUserService, CQIE.LOG.Services.IUserServiceImp>();
-            //services.AddScoped<CQIE.LOG.Services.IRoleService, CQIE.LOG.Services.IRoleServiceImp>();
-            //services.AddScoped<CQIE.LOG.Services.ITool, CQIE.LOG.Services.IToolImp>();
+            services.AddScoped<CQIE.LOG.Services.IUserService, CQIE.LOG.Services.UserServiceImp>();
+            services.AddScoped<CQIE.LOG.Services.IRoleService, CQIE.LOG.Services.RoleServiceImp>();
+            services.AddScoped<CQIE.LOG.Services.ITool, CQIE.LOG.Services.IToolImp>();
 
 
             //∆Ù”√ƒ⁄¥Êª∫¥Ê

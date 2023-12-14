@@ -173,6 +173,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\SysRole\Add.cshtml" />
+    <None Include="Views\SysRole\Edit_Init.cshtml" />
+    <None Include="Views\SysRole\Edit_Role_Manage.cshtml" />
+    <None Include="Views\SysRole\Index.cshtml" />
+    <None Include="Views\SysUser\Add.cshtml" />
+    <None Include="Views\SysUser\Edit_Init.cshtml" />
+    <None Include="Views\SysUser\Index.cshtml" />
     <None Include="wwwroot\js\my_layout.js\index.js" />
     <None Include="wwwroot\js\my_sysrole\SysRole_List.js" />
     <None Include="wwwroot\js\my_sysuser\SysUser_Add.js" />

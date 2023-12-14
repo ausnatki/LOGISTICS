@@ -25,7 +25,6 @@ function executeCommonLogic() {
     parent.layer.closeAll(); // 关闭所有弹出层
 }
 
-
 layui.use(['table', 'dropdown'], function () {
     var table = layui.table;
     var dropdown = layui.dropdown;
@@ -51,7 +50,8 @@ layui.use(['table', 'dropdown'], function () {
             { type: 'checkbox', fixed: 'left' },
             { field: 'id', fixed: 'left', width: '10%', title: 'ID', sort: true },
             { field: 'name', width: '10%', title: '用户' },
-            { title: '状态', width: 85, templet: '#Role-Table-Manage' },
+            { title: '角色权限分配', width: 150, templet: '#Table-Operation' },
+            { title: '用户分配', width: '150', templet: '#Table-Manage' },
             { fixed: 'right', title: '操作', width: '25%', minWidth: 125, toolbar: '#barDemo' }
         ]],
         done: function () {
@@ -338,18 +338,17 @@ layui.use(['table', 'dropdown'], function () {
                 style: 'box-shadow: 1px 1px 10px rgb(0 0 0 / 12%);' // 设置额外样式
             })
         }
-        else if (obj.event == "Edit_Role")
-        {
+        else if (obj.event == "Edit_Role") {
             layer.open({
                 type: 1, // page 层类型
-                area: ['600px', '500px'],
-                title: 'Hello layer',
+                area: ['500px', '500px'],
+                title: '用户分配管理',
                 shade: 0.6, // 遮罩透明度
                 shadeClose: true, // 点击遮罩区域，关闭弹层
                 maxmin: true, // 允许全屏最小化
                 anim: 0, // 0-6 的动画形式，-1 不开启
                 content: `
-                    <div class="layui-btn-container">
+                    <div class="layui-btn-container" style="padding:10px">
                         <button type="button" class="layui-btn" lay-on="getData">确定</button>
                         <button type="button" class="layui-btn" lay-on="reload">重置</button>
                     </div>
@@ -371,7 +370,7 @@ layui.use(['table', 'dropdown'], function () {
                                 transfer.render({
                                     elem: '#Role_Manage',
                                     data: jsonData.left,
-                                    title: ['未选中', '选中'],
+                                    title: ['无权限', '已有权限'],
                                     showSearch: true,
                                     value: right,
                                     id: 'demo-inst'
@@ -386,7 +385,7 @@ layui.use(['table', 'dropdown'], function () {
                                         }, function (index) {
                                             console.log(getData)
                                             console.log(data.id)
- 
+
                                             axios({
                                                 url: '/SysRole/Edit_Role_Manage',
                                                 method: 'post',
@@ -395,7 +394,7 @@ layui.use(['table', 'dropdown'], function () {
                                                     Rid: data.id
                                                 },
                                                 headers: {
-                                                    'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryVQmB3imziMBCv4zV'   
+                                                    'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryVQmB3imziMBCv4zV'
                                                 }
                                             }).then(result => {
                                                 var jsonData = JSON.parse(result.data);
@@ -411,7 +410,7 @@ layui.use(['table', 'dropdown'], function () {
                                     reload: function () {
                                         //实例重载
                                         transfer.reload('demo-inst', {
-                                            title: ['未选中', '选中'],
+                                            title: ['无权限', '已有权限'],
                                             value: right,
                                             showSearch: true
                                         })
@@ -424,6 +423,96 @@ layui.use(['table', 'dropdown'], function () {
                         });
                 }
             });
+        }
+        else if (obj.event == "Edit_Role_Operation") {
+            {
+                layer.open({
+                    type: 1, // page 层类型
+                    area: ['500px', '500px'],
+                    title: '用户分配管理',
+                    shade: 0.6, // 遮罩透明度
+                    shadeClose: true, // 点击遮罩区域，关闭弹层
+                    maxmin: true, // 允许全屏最小化
+                    anim: 0, // 0-6 的动画形式，-1 不开启
+                    content: `
+                    <div class="layui-btn-container" style="padding:10px">
+                        <button type="button" class="layui-btn" lay-on="getData">确定</button>
+                        <button type="button" class="layui-btn" lay-on="reload">重置</button>
+                    </div>
+                    <div id="Role_Manage"></div>
+                     `,
+                    success: function () {
+                        axios.get('/SysRole/Role_Operation_Init', { params: { id: data.id } })
+                            .then(function (response) {
+                                console.log(response.data); // 打印请求结果
+                                var jsonData = JSON.parse(response.data);
+                                console.log(jsonData.left)
+                                console.log(jsonData.right)
+                                var right = jsonData.right
+                                /* var right = jsonData.right.map(item => item.value);*/
+                                console.log(right);
+                                layui.use(function () {
+                                    var transfer = layui.transfer;
+                                    var util = layui.util;
+                                    // 使用请求结果进行渲染
+                                    transfer.render({
+                                        elem: '#Role_Manage',
+                                        data: jsonData.left,
+                                        title: ['无权限', '已有权限'],
+                                        showSearch: true,
+                                        value: right,
+                                        id: 'demo-inst'
+                                    });
+                                    // 批量事件
+                                    util.on('lay-on', {
+                                        getData: function (othis) {
+                                            var getData = transfer.getData('demo-inst'); // 获取右侧数据
+                                            layer.confirm('确定要修改信息吗?', {
+                                                icon: 3,
+                                                title: '提示'
+                                            }, function (index) {
+                                                console.log(getData)
+                                                console.log(data.id)
+
+                                                axios({
+                                                    url: '/SysRole/Edit_Operation_Manage',
+                                                    method: 'post',
+                                                    data: {
+                                                        list: getData,
+                                                        Rid: data.id
+                                                    },
+                                                    headers: {
+                                                        'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryVQmB3imziMBCv4zV'
+                                                    }
+                                                }).then(result => {
+                                                    var jsonData = JSON.parse(result.data);
+                                                    handleResponse(jsonData);
+                                                    layer.close(index); // 在处理响应后关闭确认对话框
+                                                }).catch(error => {
+                                                    var jsonData = JSON.parse(error.data);
+                                                    handleResponse(jsonData);
+                                                })
+
+                                            })
+                                        },
+                                        reload: function () {
+                                            //实例重载
+                                            transfer.reload('demo-inst', {
+                                                title: ['无权限', '已有权限'],
+                                                value: right,
+                                                showSearch: true
+                                            })
+                                        }
+                                    });
+                                });
+                            })
+                            .catch(function (error) {
+                                console.error('Error fetching data:', error);
+                            });
+                    }
+                });
+            }
+
         }
     });
 
@@ -465,7 +554,3 @@ layui.use(['table', 'dropdown'], function () {
         return false; // 阻止默认 form 跳转
     });
 });
-
-
-
-

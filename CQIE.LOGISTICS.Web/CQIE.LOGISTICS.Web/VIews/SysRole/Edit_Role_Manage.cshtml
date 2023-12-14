@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demo</title>
+    <!-- 请勿在项目正式环境中引用该 layui.css 地址 -->
+    <link href="//unpkg.com/layui@2.9.0/dist/css/layui.css" rel="stylesheet">
+</head>
+<body>
+    <div class="layui-btn-container">
+        <button type="button" class="layui-btn" lay-on="getData">获取右侧数据</button>
+        <button type="button" class="layui-btn" lay-on="reload">重载实例</button>
+    </div>
+    <div id="ID-transfer-demo-inst"></div>
+
+    <!-- 请勿在项目正式环境中引用该 layui.js 地址 -->
+    <script src="//unpkg.com/layui@2.9.0/dist/layui.js"></script>
+    <script>
+        layui.use(function () {
+            var transfer = layui.transfer;
+            var util = layui.util;
+            var layer = layui.layer;
+            // 数据
+            var data = [
+                { "value": "1", "title": "李白" },
+                { "value": "2", "title": "杜甫" },
+                { "value": "3", "title": "苏轼" },
+                { "value": "4", "title": "李清照" },
+                { "value": "5", "title": "鲁迅", "disabled": true },
+                { "value": "6", "title": "巴金" },
+                { "value": "7", "title": "冰心" },
+                { "value": "8", "title": "矛盾" },
+                { "value": "9", "title": "贤心" }
+            ];
+            // 渲染
+            transfer.render({
+                elem: '#ID-transfer-demo-inst',
+                data: data,
+                id: 'demo-inst' // 定义唯一索引
+            });
+            // 批量事件
+            util.on('lay-on', {
+                getData: function (othis) {
+                    var getData = transfer.getData('demo-inst'); // 获取右侧数据
+                    layer.alert(JSON.stringify(getData));
+                },
+                reload: function () {
+                    //实例重载
+                    transfer.reload('demo-inst', {
+                        title: ['文人', '喜欢的文人'],
+                        value: ['2', '5', '9'],
+                        showSearch: true
+                    })
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
