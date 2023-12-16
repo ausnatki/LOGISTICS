@@ -1,0 +1,366 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- 给容器追加 class="layui-form-pane"，即可显示为方框风格 -->
+<blockquote class="layui-elem-quote layui-text">
+    <h2>货运单添加</h2>
+</blockquote>
+
+<style>
+    .people {
+        padding: 10px;
+        border: 1px solid #fafafa;
+    }
+
+        .people p {
+            font-size: large;
+            padding: 0 0 20px 0;
+            font-weight: 700;
+        }
+</style>
+
+<div style="padding:0 20px">
+    <form class="layui-form layui-form-pane" action="">
+        <div class="layui-form-item people">
+            <p>地点信息</p>
+            <div class="layui-form-item">
+                <label class="layui-form-label">发站</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="DepartureStation" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
+                </div>
+
+                <label class="layui-form-label">到站（局）</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="ArrivalStation" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
+                </div>
+            </div>
+            @*第二行*@
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label" style="width:200px">到达所属省（市）自治区</label>
+                    <div class="layui-input-inline">
+                        <select name="ProvinceOfArrivalStation">
+                            <option value=""></option>
+                            <option value="四川">私闯</option>
+                            <option value="重庆" selected>重庆</option>
+                            <option value="北京">北京</option>
+                            <option value="上海">上海</option>
+                            <option value="广东">广东</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            @*第三行*@
+            <div class="layui-form-item">
+                <label class="layui-form-label">发货地点</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="ShippingLocation" lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+                @*<div class="layui-form-mid layui-text-em">请务必填写用户名</div>*@
+                <label class="layui-form-label">收货地点</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="DeliveryLocation" lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+
+        @*托运人信息*@
+        <div class="layui-form-item people">
+            <p>托运人信息</p>
+            <div class="layui-form-item">
+                <label class="layui-form-label">名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Shipper_Name" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
+                </div>
+
+                <label class="layui-form-label">电话</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Shipper_Phone" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">地址</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Shipper_Address" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
+                </div>
+
+                <label class="layui-form-label">邮编</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Shipper_PostalCode" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
+                </div>
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Shipper_Email" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
+                </div>
+            </div>
+        </div>
+
+        @*收货人信息*@
+        <div class="layui-form-item people">
+            <p>送货人信息</p>
+            <div class="layui-form-item">
+                <label class="layui-form-label">名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Carrier_Name" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
+                </div>
+
+                <label class="layui-form-label">电话</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Carrier_Phone" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">地址</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Carrier_Address" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
+                </div>
+
+                <label class="layui-form-label">邮编</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Carrier_PostalCode" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
+                </div>
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Carrier_Email" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
+                </div>
+            </div>
+        </div>
+
+        @*货物信息*@
+        <div class="layui-form-item people">
+            <p>货物表信息</p>
+            <table id="cargoTable" class="layui-table">
+                <thead>
+                    <tr>
+                        <th>货物名称</th>
+                        <th>集装箱箱型</th>
+                        <th>集装箱箱类型</th>
+                        <th>集装箱数量</th>
+                        <th>集装箱号码</th>
+                        <th>施封号码</th>
+                        <th>运输费</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="width: 150px"><input type="text" style="border:none;" lay-verify="required" name="GoodsName" /></td>
+                        <td style="width:200px">
+                            <select name="ContainerType" lay-filter="containerType">
+                                <option value=""></option>
+                                <option value="0">小箱型</option>
+                                <option value="1" selected>中箱型</option>
+                                <option value="2">大箱型</option>
+                            </select>
+                        </td>
+                        <td style="width:200px">
+                            <select name="ContainerCatgory" lay-filter="containerCategory">
+                                <option value=""></option>
+                                <option value="0">小类型</option>
+                                <option value="1" selected>中类型</option>
+                                <option value="2">大类型</option>
+                            </select>
+                        </td>
+                        <td style="width: 150px"><input type="text" style="border:none;" lay-verify="required" name="Amount" /></td>
+                        <td style="width: 150px"><input type="text" style="border:none;" lay-verify="required" name="ContainerNumber" /></td>
+                        <td style="width: 150px"><input type="text" style="border:none;" lay-verify="required" name="SealNumberlist" /></td>
+                        <td style="width: 150px"><input type="text" style="border:none; " lay-verify="required" name="transportationFee" /></td>
+                    </tr>
+                    <!-- 可以添加更多的数据行 -->
+                </tbody>
+            </table>
+        </div>
+
+        @* 托运事项 *@
+        <div class="layui-form-item people">
+            <p>货运事项</p>
+            <div class="layui-form-item">
+                <label class="layui-form-label">附件文件</label>
+                <div class="layui-input-inline" style="width: 100px;">
+                    <button type="button" class="layui-btn layui-btn-normal" id="ID-upload-demo-choose" name="AttachedDocuments">选择文件</button>
+                </div>
+
+                <label class="layui-form-label">货物价格</label>
+                <div class="layui-input-inline" style="width: 100px;">
+                    <input type="text" name="GoodsPrice" placeholder="￥" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">托运人记载事项</label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入内容" class="layui-textarea" name="ShipperRemarks"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">承运人记载事项</label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入内容" name="CarrierRemarks" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        @*提交按钮*@
+        <div class="layui-form-item">
+            <button class="layui-btn" lay-submit lay-filter="demo2">确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </form>
+</div>
+<!-- 请勿在项目正式环境中引用该 layui.js 地址 -->
+<script src="~/lib/node_modules/axios/dist/axios.min.js"></script>
+<script>
+    layui.use(['form'], function () {
+        var form = layui.form;
+        var layer = layui.layer;
+        var upload = layui.upload;
+        // 货物表信息添加新行功能
+        var cargoTable = document.querySelector('#cargoTable');
+
+        function addRow() {
+            // 监听最后一个输入框的输入事件
+            var flag = 0;
+            var lastInput = cargoTable.querySelector('tbody tr:last-child input[name="transportationFee"]');
+            if (lastInput) {
+                lastInput.addEventListener('input', function () {
+                    // 检查是否输入完成，这里简单地判断输入框的值是否非空
+                    if (lastInput.value.trim() !== '') {
+                        flag++;
+                    }
+                    if (flag === 1) {
+                        // 创建新的行元素
+                        var newRow = document.createElement('tr');
+
+                        // 设置行的 HTML 内容
+                        newRow.innerHTML = `
+                            <td style="width: 150px"><input type="text" style="border:none;" name="GoodsName" /></td>
+                            <td style="width:150px">
+                                <select name="ContainerType">
+                                    <option value=""></option>
+                                    <option value="0">箱型1</option>
+                                    <option value="1" selected>箱型2</option>
+                                    <option value="2">箱型3</option>
+                                    <option value="3">箱型4</option>
+                                    <option value="4">箱型5</option>
+                                </select>
+                            </td>
+                            <td style="width:150px">
+                                <select name="ContainerCatgory">
+                                    <option value=""></option>
+                                    <option value="0">类型1</option>
+                                    <option value="1" selected>类型2</option>
+                                    <option value="2">类型3</option>
+                                    <option value="3">类型4</option>
+                                    <option value="4">类型5</option>
+                                </select>
+                            </td>
+                            <td style="width: 150px"><input type="text" style="border:none;" name="Amount"  /></td>
+                            <td style="width: 150px"><input type="text" style="border:none;" name="ContainerNumber"  /></td>
+                            <td style="width: 150px"><input type="text" style="border:none;" name="SealNumberlist"  /></td>
+                            <td style="width: 150px"><input type="text" style="border:none;" name="transportationFee"  /></td>
+                        </tr>
+                        `;
+
+                        // 将新行附加到表格
+                        cargoTable.querySelector('tbody').appendChild(newRow);
+
+                        // 重新渲染 layui 表单
+                        form.render();
+
+                        // 为新行再次调用添加新行的函数
+                        addRow();
+                    }
+                });
+            }
+        }
+
+        // 初始化调用一次
+        addRow();
+
+        // 提交事件
+        form.on('submit(demo2)', function (data) {
+            // 获取表格中所有行的数据
+            var tableData = getDataFromForm();
+            // 获取表单字段值
+            var field = data.field;
+
+            // 从表单获取数据的函数
+            function getDataFromForm() {
+                var dataList = [];
+
+                // 遍历表格中的每一行
+                $('#cargoTable tbody tr').each(function () {
+                    var rowData = {
+                        GoodsName: $(this).find('input[name="GoodsName"]').val(),
+                        ContainerType: $(this).find('select[name="ContainerType"]').val(),
+                        ContainerCategory: $(this).find('select[name="ContainerCatgory"]').val(),
+                        Amount: $(this).find('input[name="Amount"]').val(),
+                        ContainerNumber: $(this).find('input[name="ContainerNumber"]').val(),
+                        SealNumberlist: $(this).find('input[name="SealNumberlist"]').val(),
+                        TransportationFee: $(this).find('input[name="transportationFee"]').val()
+                    };
+
+                    // 将行数据添加到列表
+                    dataList.push(rowData);
+                });
+
+                return dataList;
+            }
+
+            // 将表格数据添加到表单字段中
+            field.goods = tableData;
+            console.log(field)
+            // 显示填写结果，仅作演示用
+            layer.confirm('确定要添加信息吗?', {
+                icon: 3,
+                title: '提示'
+            }, function (index) {
+                /* 执行 AJAX 请求*/
+                axios({
+                    url: '/SysWaybill/Add',
+                    method: 'POST',
+                    data: field,
+                    headers: {
+                        'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryVQmB3imziMBCv4zV'
+                    }
+                }).then(result => {
+                    /*解析JSON字符串*/
+                    var jsonData = JSON.parse(result.data);
+                    handleResponse(jsonData);
+                    layer.close(index); // 在处理响应后关闭确认对话框
+                }).catch(error => {
+                    /*请求失败处理*/
+                    var jsonData = JSON.parse(error.data);
+                    handleResponse(jsonData);
+                });
+            })
+            
+            // 在这里执行 Ajax 等操作，使用 field 对象提交数据
+            // ...
+
+            return false; // 阻止默认 form 跳转
+        });
+
+
+        // 渲染上传组件
+        upload.render({
+            elem: '#ID-upload-demo-choose',
+            url: '', // 此处配置你自己的上传接口即可
+            auto: false,
+            // multiple: true,
+            bindAction: '#ID-upload-demo-action',
+            done: function (res) {
+                layer.msg('上传成功');
+                console.log(res)
+            }
+        });
+    });
+</script>
+
+

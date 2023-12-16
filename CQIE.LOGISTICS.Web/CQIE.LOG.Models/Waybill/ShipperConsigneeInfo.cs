@@ -14,6 +14,7 @@ namespace CQIE.LOG.Models.Waybill
         public string Phone { get; set; }
         public string Address { get; set; }
         public string PostalCode { get; set; }//邮编
+        public string Email { get; set; }
         public WayBill Waybill { get; set; }
     }
 }

@@ -38,6 +38,7 @@ namespace CQIE.LOGISTICS.Web
                     .AddRoles<SysRole>()
                     .AddEntityFrameworkStores<CQIE.LOG.DBManager.LOGDbContext>();
 
+            services.AddRazorPages().AddRazorRuntimeCompilation();//添加实时预览
             #region 注册ORM相关类
             services.AddSingleton(typeof(CQIE.LOG.Utility.ConfigService));//singleton格式转换要加typeof
             services.AddScoped(typeof(CQIE.LOG.DBManager.LOGDbContext));

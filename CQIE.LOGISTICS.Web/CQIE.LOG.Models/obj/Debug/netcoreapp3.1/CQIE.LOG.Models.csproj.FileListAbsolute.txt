@@ -16,3 +16,4 @@ D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOG.Models\obj\Debug\netco
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOG.Models\obj\Debug\netcoreapp3.1\CQIE.LOG.Models.csproj.CoreCompileInputs.cache
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOG.Models\obj\Debug\netcoreapp3.1\CQIE.LOG.Models.dll
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOG.Models\obj\Debug\netcoreapp3.1\CQIE.LOG.Models.pdb
+D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOG.Models\obj\Debug\netcoreapp3.1\CQIE.LOG.Models.csproj.AssemblyReference.cache
