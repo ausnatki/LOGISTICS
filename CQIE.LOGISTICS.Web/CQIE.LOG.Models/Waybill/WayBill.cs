@@ -23,6 +23,6 @@ namespace CQIE.LOG.Models.Waybill
         public DateTime EditTime { get; set; }//最后修改时间
         public List<GoodsInfo> goodsInfos { get; set; }//一个货运单中可以有多个货物信息
         public Delivery.Delivery_Order Delivery { get; set; }//1对1
-        public ShipperConsigneeInfo ShipperConsigneeInfo { get; set; }//货运单和托运人/收货人是一对一的关系
+        public ShipperConsigneeInfo ShipperConsigneeInfo { get; set; }//货运单和托运人/收货人是一对多的关系
     }
 }

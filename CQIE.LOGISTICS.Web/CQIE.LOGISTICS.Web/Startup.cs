@@ -50,6 +50,7 @@ namespace CQIE.LOGISTICS.Web
             services.AddScoped<CQIE.LOG.Services.IUserService, CQIE.LOG.Services.UserServiceImp>();
             services.AddScoped<CQIE.LOG.Services.IRoleService, CQIE.LOG.Services.RoleServiceImp>();
             services.AddScoped<CQIE.LOG.Services.ITool, CQIE.LOG.Services.IToolImp>();
+            services.AddScoped<CQIE.LOG.Services.ISysWayBill, CQIE.LOG.Services.SysWayBillImp>();
 
 
             //∆Ù”√ƒ⁄¥Êª∫¥Ê

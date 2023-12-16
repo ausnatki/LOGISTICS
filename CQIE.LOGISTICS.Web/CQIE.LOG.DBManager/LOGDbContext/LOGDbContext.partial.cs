@@ -15,5 +15,8 @@ namespace CQIE.LOG.DBManager
         public DbSet<CQIE.LOG.Models.Identity.SysUser> SysUsers { get; set; }
         public DbSet<CQIE.LOG.Models.Identity.SysRole> SysRoles { get; set; }
         public DbSet<CQIE.LOG.Models.SysRoleMenuOperation> sysRoleMenuOperations { get; set; }
+        public DbSet<CQIE.LOG.Models.Waybill.GoodsInfo> GoodsInfos { get; set; }
+        public DbSet<CQIE.LOG.Models.Waybill.ShipperConsigneeInfo> ShipperConsigneeInfos { get; set; }
+        public DbSet<CQIE.LOG.Models.Waybill.WayBill> WayBills { get; set; }
     }
 }

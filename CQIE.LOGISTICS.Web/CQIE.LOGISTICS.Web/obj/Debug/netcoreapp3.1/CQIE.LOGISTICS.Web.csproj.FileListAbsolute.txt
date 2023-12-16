@@ -183,7 +183,6 @@ D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\ne
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\netcoreapp3.1\CQIE.LOGISTICS.Web.MvcApplicationPartsAssemblyInfo.cache
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\netcoreapp3.1\CQIE.LOGISTICS.Web.RazorAssemblyInfo.cache
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\netcoreapp3.1\CQIE.LOGISTICS.Web.RazorAssemblyInfo.cs
-D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\netcoreapp3.1\CQIE.LOGISTICS.Web.MvcApplicationPartsAssemblyInfo.cs
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\bin\Debug\netcoreapp3.1\appsettings.json
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\bin\Debug\netcoreapp3.1\CQIE.LOGISTICS.Web.StaticWebAssets.xml
