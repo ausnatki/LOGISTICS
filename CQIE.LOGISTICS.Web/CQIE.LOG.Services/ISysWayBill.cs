@@ -12,7 +12,6 @@ namespace CQIE.LOG.Services
     public interface ISysWayBill
     {
         public Task<List<object>> Get_All_WayBill_ListAsync(int Page, int Limit, string name);
-        public Task<List<object>> Get_By_NameAsync(int Page, int Limit, string name);
         public Task<WayBillDetailsViewModel> Get_By_IdAsync(int id);
         public Task<string> Save_Update_WaybillAsync(CQIE.LOG.Models.Waybill.WayBill waybill,
             List<CQIE.LOG.Models.Waybill.GoodsInfo> goods,

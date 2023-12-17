@@ -102,10 +102,6 @@ namespace CQIE.LOG.Services
         }
 
         #endregion
-        Task<List<object>> ISysWayBill.Get_By_NameAsync(int Page, int Limit, string name)
-        {
-            return null;
-        }
 
         #region 添加模块
         async Task<string> ISysWayBill.Save_Add_WaybillAsync(CQIE.LOG.Models.Waybill.WayBill waybill,
@@ -162,6 +158,19 @@ namespace CQIE.LOG.Services
                         if(temp.GoodsName!=null)
                         _dbManger.Ctx.GoodsInfos.Add(temp);
                     }
+
+                    //再添加调度单和报销单
+                    var d1 = new CQIE.LOG.Models.Delivery.Delivery_Order()
+                    {
+                        WayBill = waybill
+                    };
+                    _dbManger.Ctx.Delivery_Orders.Add(d1);
+
+                    var e1 = new CQIE.LOG.Models.Expenses.Expenses()
+                    {
+                        Delivery = d1
+                    };
+                    _dbManger.Ctx.Expenses.Add(e1);
 
                     await _dbManger.Ctx.SaveChangesAsync();
                     await transaction.CommitAsync();
