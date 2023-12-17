@@ -144,27 +144,31 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="width: 150px"><input type="text" style="border:none;" lay-verify="required" name="GoodsName" /></td>
-                        <td style="width:200px">
-                            <select name="ContainerType" lay-filter="containerType">
+                        <td style="width: 150px"><input type="text" style="border:none;" name="GoodsName" /></td>
+                        <td style="width:150px">
+                            <select name="ContainerType">
                                 <option value=""></option>
-                                <option value="0">小箱型</option>
-                                <option value="1" selected>中箱型</option>
-                                <option value="2">大箱型</option>
+                                <option value="箱型1">箱型1</option>
+                                <option value="箱型2" selected>箱型2</option>
+                                <option value="箱型3">箱型3</option>
+                                <option value="箱型4">箱型4</option>
+                                <option value="箱型5">箱型5</option>
                             </select>
                         </td>
-                        <td style="width:200px">
-                            <select name="ContainerCatgory" lay-filter="containerCategory">
+                        <td style="width:150px">
+                            <select name="ContainerCatgory">
                                 <option value=""></option>
-                                <option value="0">小类型</option>
-                                <option value="1" selected>中类型</option>
-                                <option value="2">大类型</option>
+                                <option value="类型1">类型1</option>
+                                <option value="类型2" selected>类型2</option>
+                                <option value="类型3">类型3</option>
+                                <option value="类型4">类型4</option>
+                                <option value="类型5">类型5</option>
                             </select>
                         </td>
-                        <td style="width: 150px"><input type="text" style="border:none;" lay-verify="required" name="Amount" /></td>
-                        <td style="width: 150px"><input type="text" style="border:none;" lay-verify="required" name="ContainerNumber" /></td>
-                        <td style="width: 150px"><input type="text" style="border:none;" lay-verify="required" name="SealNumberlist" /></td>
-                        <td style="width: 150px"><input type="text" style="border:none; " lay-verify="required" name="transportationFee" /></td>
+                        <td style="width: 150px"><input type="text" style="border:none;" name="Amount" /></td>
+                        <td style="width: 150px"><input type="text" style="border:none;" name="ContainerNumber" /></td>
+                        <td style="width: 150px"><input type="text" style="border:none;" name="SealNumber" /></td>
+                        <td style="width: 150px"><input type="text" style="border:none;" name="transportationFee" /></td>
                     </tr>
                     <!-- 可以添加更多的数据行 -->
                 </tbody>
@@ -239,30 +243,31 @@
 
                         // 设置行的 HTML 内容
                         newRow.innerHTML = `
+                        <tr>
                             <td style="width: 150px"><input type="text" style="border:none;" name="GoodsName" /></td>
                             <td style="width:150px">
                                 <select name="ContainerType">
                                     <option value=""></option>
-                                    <option value="0">箱型1</option>
-                                    <option value="1" selected>箱型2</option>
-                                    <option value="2">箱型3</option>
-                                    <option value="3">箱型4</option>
-                                    <option value="4">箱型5</option>
+                                    <option value="箱型1">箱型1</option>
+                                    <option value="箱型2" selected>箱型2</option>
+                                    <option value="箱型3">箱型3</option>
+                                    <option value="箱型4">箱型4</option>
+                                    <option value="箱型5">箱型5</option>
                                 </select>
                             </td>
                             <td style="width:150px">
                                 <select name="ContainerCatgory">
                                     <option value=""></option>
-                                    <option value="0">类型1</option>
-                                    <option value="1" selected>类型2</option>
-                                    <option value="2">类型3</option>
-                                    <option value="3">类型4</option>
-                                    <option value="4">类型5</option>
+                                    <option value="类型1">类型1</option>
+                                    <option value="类型2" selected>类型2</option>
+                                    <option value="类型3">类型3</option>
+                                    <option value="类型4">类型4</option>
+                                    <option value="类型5">类型5</option>
                                 </select>
                             </td>
                             <td style="width: 150px"><input type="text" style="border:none;" name="Amount"  /></td>
                             <td style="width: 150px"><input type="text" style="border:none;" name="ContainerNumber"  /></td>
-                            <td style="width: 150px"><input type="text" style="border:none;" name="SealNumberlist"  /></td>
+                            <td style="width: 150px"><input type="text" style="border:none;" name="SealNumber"  /></td>
                             <td style="width: 150px"><input type="text" style="border:none;" name="transportationFee"  /></td>
                         </tr>
                         `;
@@ -299,10 +304,10 @@
                     var rowData = {
                         GoodsName: $(this).find('input[name="GoodsName"]').val(),
                         ContainerType: $(this).find('select[name="ContainerType"]').val(),
-                        ContainerCategory: $(this).find('select[name="ContainerCatgory"]').val(),
+                        ContainerCatgory: $(this).find('select[name="ContainerCatgory"]').val(),
                         Amount: $(this).find('input[name="Amount"]').val(),
                         ContainerNumber: $(this).find('input[name="ContainerNumber"]').val(),
-                        SealNumberlist: $(this).find('input[name="SealNumberlist"]').val(),
+                        SealNumber: $(this).find('input[name="SealNumber"]').val(),
                         TransportationFee: $(this).find('input[name="transportationFee"]').val()
                     };
 
@@ -315,7 +320,7 @@
 
             // 将表格数据添加到表单字段中
             field.goods = tableData;
-            console.log(field)
+            /*console.log(field)*/
             // 显示填写结果，仅作演示用
             layer.confirm('确定要添加信息吗?', {
                 icon: 3,
@@ -331,13 +336,20 @@
                     }
                 }).then(result => {
                     /*解析JSON字符串*/
+                    console.log(result.data)
                     var jsonData = JSON.parse(result.data);
-                    handleResponse(jsonData);
-                    layer.close(index); // 在处理响应后关闭确认对话框
+                    console.log(jsonData)
+                    layer.msg(jsonData.message, { icon: 1 });
+
+                    ///* 延迟2秒后执行其他逻辑*/
+                    //setTimeout(function () {
+                    //    executeCommonLogic();
+                    //}, 2000);
                 }).catch(error => {
                     /*请求失败处理*/
+                    console.log(result.data)
                     var jsonData = JSON.parse(error.data);
-                    handleResponse(jsonData);
+                    layer.msg(jsonData.message, { icon: 2 });
                 });
             })
             
@@ -360,7 +372,7 @@
                 console.log(res)
             }
         });
-    });
+    })
 </script>
 
 

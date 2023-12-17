@@ -1,0 +1,220 @@
+﻿<!-- 给容器追加 class="layui-form-pane"，即可显示为方框风格 -->
+@{ var temp = ViewBag.data as CQIE.LOG.Models.Tool.WayBillDetailsViewModel;}
+<blockquote class="layui-elem-quote layui-text">
+    <h2>货运单添加</h2>
+</blockquote>
+
+<style>
+    .people {
+        padding: 10px;
+        border: 1px solid #fafafa;
+    }
+
+        .people p {
+            font-size: large;
+            padding: 0 0 20px 0;
+            font-weight: 700;
+        }
+</style>
+
+<div style="padding:0 20px">
+    <form class="layui-form layui-form-pane" action="">
+        <div class="layui-form-item people">
+            <p>地点信息</p>
+            <div class="layui-form-item">
+                <label class="layui-form-label">发站</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="DepartureStation" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input" value="@temp.WayBill.DepartureStation">
+                </div>
+
+                <label class="layui-form-label">到站（局）</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="ArrivalStation" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input" value="@temp.WayBill.ArrivalStation">
+                </div>
+            </div>
+            @*第二行*@
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label" style="width:200px">到达所属省（市）自治区</label>
+                    <div class="layui-input-inline">
+                        <select name="ProvinceOfArrivalStation">
+                            <option value=""></option>
+                            <option value="四川" @("四川" == temp.WayBill.ProvinceOfArrivalStation ? "selected" : "")>四川</option>
+                            <option value="重庆" @("重庆" == temp.WayBill.ProvinceOfArrivalStation ? "selected" : "")>重庆</option>
+                            <option value="北京" @("北京" == temp.WayBill.ProvinceOfArrivalStation ? "selected" : "")>北京</option>
+                            <option value="上海" @("上海" == temp.WayBill.ProvinceOfArrivalStation ? "selected" : "")>上海</option>
+                            <option value="广东" @("广东" == temp.WayBill.ProvinceOfArrivalStation ? "selected" : "")>广东</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            @*第三行*@
+            <div class="layui-form-item">
+                <label class="layui-form-label">发货地点</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="ShippingLocation" lay-verify="required" autocomplete="off" class="layui-input" value="@temp.WayBill.ShippingLocation">
+                </div>
+                @*<div class="layui-form-mid layui-text-em">请务必填写用户名</div>*@
+                <label class="layui-form-label">收货地点</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="DeliveryLocation" lay-verify="required" autocomplete="off" class="layui-input" value="@temp.WayBill.DeliveryLocation">
+                </div>
+            </div>
+        </div>
+
+        @*托运人信息*@
+        <div class="layui-form-item people">
+            <p>托运人信息</p>
+            <div class="layui-form-item">
+                <label class="layui-form-label">名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Shipper_Name" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input" value="@temp.Shipper.Shipper_Name">
+                </div>
+
+                <label class="layui-form-label">电话</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Shipper_Phone" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input" value="@temp.Shipper.Shipper_Phone">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">地址</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Shipper_Address" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input" value="@temp.Shipper.Shipper_Address">
+                </div>
+
+                <label class="layui-form-label">邮编</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Shipper_PostalCode" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input" value="@temp.Shipper.Shipper_PostalCode">
+                </div>
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Shipper_Email" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input" value="@temp.Shipper.Shipper_Email">
+                </div>
+            </div>
+        </div>
+
+        @*收货人信息*@
+        <div class="layui-form-item people">
+            <p>送货人信息</p>
+            <div class="layui-form-item">
+                <label class="layui-form-label">名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Carrier_Name" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input" value="@temp.Carrier.Carrier_Name">
+                </div>
+
+                <label class="layui-form-label">电话</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Carrier_Phone" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input" value="@temp.Carrier.Carrier_Phone">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">地址</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Carrier_Address" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input" value="@temp.Carrier.Carrier_Address">
+                </div>
+
+                <label class="layui-form-label">邮编</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Carrier_PostalCode" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input" value="@temp.Carrier.Carrier_PostalCode">
+                </div>
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Carrier_Email" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input" value="@temp.Carrier.Carrier_Email">
+                </div>
+            </div>
+        </div>
+
+        @*货物信息*@
+        <div class="layui-form-item people">
+            <p>货物表信息</p>
+            <table id="cargoTable" class="layui-table">
+                <thead>
+                    <tr>
+                        <th>货物名称</th>
+                        <th>集装箱箱型</th>
+                        <th>集装箱箱类型</th>
+                        <th>集装箱数量</th>
+                        <th>集装箱号码</th>
+                        <th>施封号码</th>
+                        <th>运输费</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var goods in temp.GoodsInfo)
+                    {
+                        <tr>
+                            <td style="width: 150px"><input type="text" style="border:none;" lay-verify="required" name="GoodsName" value="@goods.GoodsName" /></td>
+                            <td style="width:200px">
+                                <select name="ContainerType">
+                                    <option value=""></option>
+                                    <option value="箱型1" @(goods.ContainerType == "箱型1" ? "selected" : "")>箱型1</option>
+                                    <option value="箱型2" @(goods.ContainerType == "箱型2" ? "selected" : "")>箱型2</option>
+                                    <option value="箱型3" @(goods.ContainerType == "箱型3" ? "selected" : "")>箱型3</option>
+                                    <option value="箱型4" @(goods.ContainerType == "箱型4" ? "selected" : "")>箱型4</option>
+                                    <option value="箱型5" @(goods.ContainerType == "箱型5" ? "selected" : "")>箱型5</option>
+                                </select>
+                            </td>
+                            <td style="width:200px">
+                                <select name="ContainerCatgory">
+                                    <option value=""></option>
+                                    <option value="类型1" @(goods.ContainerCatgory == "类型1" ? "selected" : "")>类型1</option>
+                                    <option value="类型2" @(goods.ContainerCatgory == "类型2" ? "selected" : "")>类型2</option>
+                                    <option value="类型3" @(goods.ContainerCatgory == "类型3" ? "selected" : "")>类型3</option>
+                                    <option value="类型4" @(goods.ContainerCatgory == "类型4" ? "selected" : "")>类型4</option>
+                                    <option value="类型5" @(goods.ContainerCatgory == "类型5" ? "selected" : "")>类型5</option>
+                                </select>
+                            </td>
+                            <td style="width: 150px"><input type="text" style="border:none;" lay-verify="required" name="Amount" value="@goods.Amount" /></td>
+                            <td style="width: 150px"><input type="text" style="border:none;" lay-verify="required" name="ContainerNumber" value="@goods.ContainerNumber" /></td>
+                            <td style="width: 150px"><input type="text" style="border:none;" lay-verify="required" name="SealNumber" value="@goods.SealNumber" /></td>
+                            <td style="width: 150px"><input type="text" style="border:none; " lay-verify="required" name="transportationFee" value="@goods.TransportationFee" /></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+
+        @* 托运事项 *@
+        <div class="layui-form-item people">
+            <p>货运事项</p>
+            <div class="layui-form-item">
+                <label class="layui-form-label">附件文件</label>
+                <div class="layui-input-inline" style="width: 100px;">
+                    <button type="button" class="layui-btn layui-btn-normal" id="ID-upload-demo-choose" name="AttachedDocuments" value="@temp.WayBill.AttachedDocuments">选择文件</button>
+                </div>
+
+                <label class="layui-form-label">货物价格</label>
+                <div class="layui-input-inline" style="width: 100px;">
+                    <input type="text" name="GoodsPrice" placeholder="￥" autocomplete="off" class="layui-input" value="@temp.WayBill.GoodsPrice">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">托运人记载事项</label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入内容" class="layui-textarea" name="ShipperRemarks">@temp.WayBill.ShipperRemarks</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">承运人记载事项</label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入内容" name="CarrierRemarks" class="layui-textarea">@temp.WayBill.CarrierRemarks</textarea>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        @*提交按钮*@
+        <div class="layui-form-item">
+            <button class="layui-btn" lay-submit lay-filter="Submit_Edit">确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </form>
+</div>

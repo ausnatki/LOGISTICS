@@ -178,6 +178,21 @@ namespace CQIE.LOGISTICS.Web.Controllers
 
             dbManager.Ctx.SystemMenus.Add(system);
             dbManager.Ctx.SaveChanges();
+
+            var system2 = new CQIE.LOG.Models.SystemMenu()
+            {
+                Name = "订单管理管理",
+                IconClassName = "fa fa-feed",
+                SortOrder = 1,
+                Url = null,
+            };
+            system2.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = view
+            });
+
+            dbManager.Ctx.SystemMenus.Add(system2);
+            dbManager.Ctx.SaveChanges();
             m_Resp.AppendLine("................................初始化主功能菜单完成.");
             #endregion
 
@@ -233,10 +248,60 @@ namespace CQIE.LOGISTICS.Web.Controllers
                 Operation = delete
             });
 
+            //账单管理
+            var waybillManager = new CQIE.LOG.Models.SystemMenu()
+            {
+                Name = "账单管理",
+                IconClassName = "fa fa-feed",
+                SortOrder = 2,
+                Url = "/SysWaybill/Index",
+            };
+            waybillManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = view
+            });
+            waybillManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = add
+            });
+            waybillManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = edit
+            });
+            waybillManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = delete
+            });
 
+            //账单管理
+            var waybillAdd = new CQIE.LOG.Models.SystemMenu()
+            {
+                Name = "账单添加",
+                IconClassName = "fa fa-feed",
+                SortOrder = 2,
+                Url = "/SysWaybill/Add",
+            };
+            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = view
+            });
+            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = add
+            });
+            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = edit
+            });
+            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = delete
+            });
             ////
             system.SubMenus.Add(userManager);
             system.SubMenus.Add(roleManager);
+            system2.SubMenus.Add(waybillManager);
+            system2.SubMenus.Add(waybillAdd);
             dbManager.Ctx.SaveChanges();
             m_Resp.AppendLine("................................初始化子功能菜单完成.");
             #endregion
