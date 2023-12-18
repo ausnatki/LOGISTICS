@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace CQIE.LOGISTICS.Web.Controllers
 {
+    [Authorize(Roles = "系统管理员")]
     public class SysUserController : Controller
     {
         private readonly UserManager<CQIE.LOG.Models.Identity.SysUser> _userManager;

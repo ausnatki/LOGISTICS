@@ -1,7 +1,9 @@
 ﻿@{CQIE.LOG.Models.Tool.CarTypeCarWaybillShipperUserModel temp = ViewBag.data as CQIE.LOG.Models.Tool.CarTypeCarWaybillShipperUserModel; }
+@{int ID = Convert.ToInt32(ViewBag.Id);}
 <div style="padding: 50px;">
     <form class="layui-form layui-form-pane">
 
+        <input type="text" name="Id" value="@ID" hidden />
         <div class="layui-form-item">
             <div class="layui-form-item">
                 <label class="layui-form-label">发站</label>
@@ -23,11 +25,11 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">车牌号</label>
                 <div class="layui-input-inline">
-                    <select name="State" lay-filter="required">
+                    <select name="Car_Id" lay-filter="required">
                         @{
                             foreach (var t in temp.cars)
                             {
-                                <option value="@t.Id">@t.CarNumber</option>
+                                <option value="@t.Id" @(temp.delivery.Car_Id==t.Id?"selected":"")>@t.CarNumber</option>
                             }
                         }
                     </select>
@@ -110,11 +112,11 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">送货人</label>
                 <div class="layui-input-inline">
-                    <select name="State" lay-filter="required">
+                    <select name="Delivery_man_Id" lay-filter="required">
                         @{
                             foreach (var t in temp.Delivery_Man)
                             {
-                                <option value="@t.Id">@t.UserName</option>
+                                <option value="@t.Id" @(temp.delivery.Delivery_man_Id==t.Id?"selected":"")>@t.UserName</option>
                             }
                         }
                     </select>

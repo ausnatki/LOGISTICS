@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace CQIE.LOGISTICS.Web.Controllers
 {
+    [Authorize(Roles = "系统管理员")]
     public class SysRoleController : Controller
     {
         private readonly CQIE.LOG.Services.IRoleService _role;

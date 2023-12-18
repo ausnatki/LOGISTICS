@@ -641,3 +641,6 @@ D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\ne
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\netcoreapp3.1\Razor\VIews\SysDelivery\Index.cshtml.g.cs
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\netcoreapp3.1\Razor\VIews\SysCar\Add_Init.cshtml.g.cs
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\netcoreapp3.1\Razor\VIews\SysExpenses\Edit_Init.cshtml.g.cs
+D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\netcoreapp3.1\Razor\VIews\SysExpenses\Index.cshtml.g.cs
+D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\netcoreapp3.1\Razor\VIews\Home\PageNotFound.cshtml.g.cs

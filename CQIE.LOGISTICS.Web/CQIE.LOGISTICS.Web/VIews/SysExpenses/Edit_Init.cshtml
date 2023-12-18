@@ -1,0 +1,92 @@
+﻿@{CQIE.LOG.Models.Expenses.Expenses expenses = ViewBag.data as CQIE.LOG.Models.Expenses.Expenses; }
+@using CQIE.LOG.DBManager 
+@inject IDbManager _dbManager
+
+@{ 
+    expenses.Delivery.WayBill = _dbManager.Ctx.WayBills.Where(c => c.Id == expenses.Delivery.WayBill_Id).FirstOrDefault();
+    expenses.Delivery.Delivery_Man = _dbManager.Ctx.SysUsers.Where(c => c.Id == expenses.Delivery.Delivery_man_Id).FirstOrDefault();
+}
+
+<div style="padding: 50px;">
+    <form class="layui-form layui-form-pane">
+
+        <input type="text" name="Id" value="@expenses.Id" hidden />
+        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <label class="layui-form-label">送货人</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@expenses.Delivery.Delivery_Man.UserName" autocomplete="off" class="layui-input" disabled>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <label class="layui-form-label">到站所属省市（自治区）</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@expenses.Delivery.WayBill.ArrivalStation" autocomplete="off" class="layui-input" disabled>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <label class="layui-form-label">路桥费</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Charge" value="@expenses.Cost.Charge" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">加邮费</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Cheer" value="@expenses.Cost.Cheer" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <label class="layui-form-label">车俩维护费</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Maintain" value="@expenses.Cost.Maintain" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">其他费用</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Other" value="@expenses.Cost.Other" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <label class="layui-form-label">总费用</label>
+                <div class="layui-input-block">
+                    <input type="text" value="@(expenses.Cost.Maintain+expenses.Cost.Cheer+expenses.Cost.Charge+expenses.Cost.Maintain)" autocomplete="off" class="layui-input" disabled>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item" pane>
+            <label class="layui-form-label">是否归还</label>
+            <div class="layui-input-block">
+                <input type="checkbox" @(expenses.Back_Car ? "checked" : "")  name="Back_Car" value=true lay-skin="switch" lay-filter="switchTest" title="归还">
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">文本域</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入内容" class="layui-textarea" name="Explain">@expenses.Cost.Explain</textarea>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <button class="layui-btn" lay-submit lay-filter="Submit_Edit">确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </form>
+</div>

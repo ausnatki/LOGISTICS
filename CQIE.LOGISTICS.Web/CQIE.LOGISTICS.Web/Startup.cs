@@ -134,6 +134,12 @@ namespace CQIE.LOGISTICS.Web
                 endpoints.MapControllerRoute(
                     name: "default2",
                     pattern: "{controller}/{action}/{id?}");
+
+                // 将所有不匹配的路径导向 404 页面
+                endpoints.MapControllerRoute(
+                    name: "catchAll",
+                    pattern: "{*url}",
+                    defaults: new { controller = "Home", action = "PageNotFound" });
             });
         }
     }

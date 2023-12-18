@@ -6,13 +6,14 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace CQIE.LOGISTICS.Web.Controllers
-{
+{ 
+   
     public class AdminController : Controller
     {
         private static System.Text.StringBuilder m_Resp = new System.Text.StringBuilder();
         private Microsoft.AspNetCore.Identity.UserManager<CQIE.LOG.Models.Identity.SysUser> m_UserManager;
 
-        //[Authorize(Roles = "admin")]
+       
         public IActionResult Index2([FromServices] CQIE.LOG.DBManager.IDbManager dbManager)
         {
             return View();
@@ -22,7 +23,7 @@ namespace CQIE.LOGISTICS.Web.Controllers
         {
             m_UserManager = UserManager;
         }
-
+        [Authorize(Roles = "系统管理员")]
         /// <summary>
         /// 创建数据库
         /// </summary>
@@ -100,11 +101,29 @@ namespace CQIE.LOGISTICS.Web.Controllers
 
             var viewerRole = new CQIE.LOG.Models.Identity.SysRole()
             {
-                Name = "只能查看权限",
-                NormalizedName = "只能查看权限"
+                Name = "发货站人员",
+                NormalizedName = "发货站人员"
             };
 
-            dbManager.Ctx.Roles.AddRange(adminRole, viewerRole);
+            var DeliveryRole = new CQIE.LOG.Models.Identity.SysRole()
+            {
+                Name = "送货人员",
+                NormalizedName = "送货人员"
+            };
+            
+            var diaoduRole = new CQIE.LOG.Models.Identity.SysRole()
+            {
+                Name = "调度人员",
+                NormalizedName = "调度人员"
+            };
+            var commitRole = new CQIE.LOG.Models.Identity.SysRole()
+            {
+                Name = "普通角色",
+                NormalizedName = "普通角色"
+            };
+
+
+            dbManager.Ctx.Roles.AddRange(adminRole, viewerRole,DeliveryRole,diaoduRole,commitRole);
             dbManager.Ctx.SaveChanges();
             #endregion
 
@@ -220,8 +239,21 @@ namespace CQIE.LOGISTICS.Web.Controllers
             {
                 Operation = view
             });
-
             dbManager.Ctx.SystemMenus.Add(system4);
+
+            var system5 = new CQIE.LOG.Models.SystemMenu()
+            {
+                Name = "报销管理",
+                IconClassName = "fa fa-feed",
+                SortOrder = 1,
+                Url = null,
+            };
+            system5.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = view
+            });
+            dbManager.Ctx.SystemMenus.Add(system5);
+
             dbManager.Ctx.SaveChanges();
             m_Resp.AppendLine("................................初始化主功能菜单完成.");
             #endregion
@@ -336,19 +368,19 @@ namespace CQIE.LOGISTICS.Web.Controllers
                 SortOrder = 1,
                 Url = "/SysDelivery/Index",
             };
-            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            DeliveryManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
                 Operation = view
             });
-            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            DeliveryManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
                 Operation = add
             });
-            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            DeliveryManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
                 Operation = edit
             });
-            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            DeliveryManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
                 Operation = delete
             });
@@ -361,19 +393,19 @@ namespace CQIE.LOGISTICS.Web.Controllers
                 SortOrder = 1,
                 Url = "/SysDeliveryMan/Index",
             };
-            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            DeliverymanManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
                 Operation = view
             });
-            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            DeliverymanManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
                 Operation = add
             });
-            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            DeliverymanManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
                 Operation = edit
             });
-            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            DeliverymanManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
                 Operation = delete
             });
@@ -386,19 +418,19 @@ namespace CQIE.LOGISTICS.Web.Controllers
                 SortOrder = 1,
                 Url = "/SysCar/Index",
             };
-            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            DeliverycarManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
                 Operation = view
             });
-            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            DeliverycarManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
                 Operation = add
             });
-            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            DeliverycarManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
                 Operation = edit
             });
-            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            DeliverycarManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
                 Operation = delete
             });
@@ -411,23 +443,46 @@ namespace CQIE.LOGISTICS.Web.Controllers
                 SortOrder = 1,
                 Url = "/SysCarType/Index",
             };
-            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            DeliverycartyeManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
                 Operation = view
             });
-            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            DeliverycartyeManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
                 Operation = add
             });
-            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            DeliverycartyeManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
                 Operation = edit
             });
-            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            DeliverycartyeManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
                 Operation = delete
             });
 
+            var ExpensesManager = new CQIE.LOG.Models.SystemMenu()
+            {
+                Name = "报销单管理",
+                IconClassName = "fa fa-feed",
+                SortOrder = 1,
+                Url = "/SysExpenses/Index",
+            };
+            ExpensesManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = view
+            });
+            ExpensesManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = add
+            });
+            ExpensesManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = edit
+            });
+            ExpensesManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = delete
+            });
 
             ////
             system.SubMenus.Add(userManager);
@@ -440,6 +495,9 @@ namespace CQIE.LOGISTICS.Web.Controllers
             system4.SubMenus.Add(DeliverycarManager);
             system4.SubMenus.Add(DeliverycartyeManager);
 
+            system5.SubMenus.Add(ExpensesManager);
+
+            
             dbManager.Ctx.SaveChanges();
             m_Resp.AppendLine("................................初始化子功能菜单完成.");
             #endregion

@@ -1,5 +1,6 @@
 ﻿using CQIE.LOG.DBManager;
 using CQIE.LOG.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace CQIE.LOGISTICS.Web.Controllers
 {
+    [Authorize(Roles = "系统管理员,调度人员")]
     public class SysDeliveryController : Controller
     {
 
@@ -81,7 +83,8 @@ namespace CQIE.LOGISTICS.Web.Controllers
         public async Task<IActionResult> Edit_Init(int id)
         {
            CQIE.LOG.Models.Tool.CarTypeCarWaybillShipperUserModel t = await _sysDelivery.Edit_Init(id);
-            ViewBag.data = t; 
+            ViewBag.data = t;
+            ViewBag.Id = id;
             return View();
         }
         #endregion
@@ -90,13 +93,13 @@ namespace CQIE.LOGISTICS.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            Edit_Init(id);
+            await Edit_Init(id);
             var htmlcontent = await _tool.RenderToStringAsync("Edit_Init");
             return Content(htmlcontent);
         }
 
         [HttpPost]
-        public async Task<JsonResult> Edit([FromBody] CQIE.LOG.Models.Delivery.Delivery_Order order)
+        public async Task<JsonResult> Edit(CQIE.LOG.Models.Delivery.Delivery_Order order)
         {
             var result = await _sysDelivery.Save_Update_DeliveryAsync(order);
 

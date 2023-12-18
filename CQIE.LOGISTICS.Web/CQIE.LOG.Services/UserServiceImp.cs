@@ -226,15 +226,17 @@ namespace CQIE.LOG.Services
 
                     // 创建用户
                     await _userManager.CreateAsync(user, user.LoginPassword);
+                    user.NormalizedUserName = user.UserName.ToUpper();
+
 
                     // 获取 ID 为 2 的角色
                     CQIE.LOG.Models.Identity.SysRole role = await m_Manager.Ctx.SysRoles
-                        .Where(c => c.Id == 2)
+                        .Where(c => c.Id == 5)
                         .FirstOrDefaultAsync();
 
                     if (role == null)
                     {
-                        // 处理角色 ID 为 2 的角色不存在的情况
+                        // 处理角色 ID 为 5 的角色不存在的情况
                         await transaction.RollbackAsync();
                         return JsonSerializer.Serialize(new { success = false, message = "ID 为 2 的角色不存在。" });
                     }

@@ -34,7 +34,8 @@ namespace CQIE.LOG.Services
                                               carrier = _dbManger.Ctx.ShipperConsigneeInfos.Where(c => c.Id == o.WayBill.ConsigneeID).Select(c => c.Name).FirstOrDefault(),
                                               Did = o.Id,
                                               DepartureStation = o.WayBill.DepartureStation,
-                                              ArrTime = o.WayBill.UpTime.ToLongDateString()//者是虚假的到站时间
+                                              ArrTime = o.WayBill.UpTime.ToLongDateString(),//者是虚假的到站时间,
+                                              Deliver_date = o.Delivery_data.ToLongDateString()
                                           })
                                           .Skip(startIndex)
                                           .Take(Limit)
@@ -81,7 +82,9 @@ namespace CQIE.LOG.Services
                 try 
                 {
                     var Doder = _dbManger.Ctx.Delivery_Orders.Where(c => c.Id == order.Id).FirstOrDefault();
-                    Doder = order;
+                    Doder.Car_Id = order.Car_Id;
+                    Doder.Delivery_man_Id = order.Delivery_man_Id;
+                    Doder.Delivery_data = DateTime.Now;
                     await _dbManger.Ctx.SaveChangesAsync();
                     transaction.Commit();
                     return JsonSerializer.Serialize(new { success = true, message = "修改成功" });
@@ -144,6 +147,8 @@ namespace CQIE.LOG.Services
         {
             try 
             {
+                CQIE.LOG.Models.Delivery.Delivery_Order delivery = _dbManger.Ctx.Delivery_Orders.Where(c => c.Id == id).FirstOrDefault();
+
                 List<CQIE.LOG.Models.Delivery.Car> cars = await _dbManger.Ctx.Cars.Select(c => c).ToListAsync();
 
                 List<CQIE.LOG.Models.Delivery.CarType> carTypes = await _dbManger.Ctx.CarTypes.Select(c => c).ToListAsync();
@@ -165,6 +170,7 @@ namespace CQIE.LOG.Services
 
                 Models.Tool.CarTypeCarWaybillShipperUserModel result = new Models.Tool.CarTypeCarWaybillShipperUserModel()
                 {
+                    delivery = delivery,
                     cars = cars,
                     carTypes = carTypes,
                     Shipper = Shipper,

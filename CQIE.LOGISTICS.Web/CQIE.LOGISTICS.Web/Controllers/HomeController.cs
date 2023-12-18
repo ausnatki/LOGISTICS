@@ -12,5 +12,10 @@ namespace CQIE.LOGISTICS.Web.Controllers
         {
             return View();
         }
+
+        public IActionResult PageNotFound() 
+        {
+            return View();
+        }
     }
 }

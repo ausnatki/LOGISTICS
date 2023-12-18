@@ -6,6 +6,7 @@ namespace CQIE.LOG.Models.Tool
 {
     public class CarTypeCarWaybillShipperUserModel
     {
+        public CQIE.LOG.Models.Delivery.Delivery_Order delivery { get; set; }
         public List<CQIE.LOG.Models.Delivery.Car> cars { get; set; }
         public List<CQIE.LOG.Models.Delivery.CarType> carTypes { get; set; }
         public CQIE.LOG.Models.Waybill.ShipperConsigneeInfo Shipper { get; set; }

@@ -1,6 +1,7 @@
 ﻿using CQIE.LOG.DBManager;
 using CQIE.LOG.Models.Tool;
 using CQIE.LOG.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace CQIE.LOGISTICS.Web.Controllers
 {
+    [Authorize(Roles = "系统管理员,发货站人员")]
     public class SysWaybillController : Controller
     {
         private readonly CQIE.LOG.Services.ISysWayBill _sysWaybill;

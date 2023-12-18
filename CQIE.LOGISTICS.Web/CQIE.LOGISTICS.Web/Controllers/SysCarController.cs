@@ -1,5 +1,6 @@
 ﻿using CQIE.LOG.DBManager;
 using CQIE.LOG.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace CQIE.LOGISTICS.Web.Controllers
 {
+
+    [Authorize(Roles = "系统管理员,调度人员")]
+
     public class SysCarController : Controller
     {
         private readonly CQIE.LOG.Services.ITool _tool;

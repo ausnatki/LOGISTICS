@@ -51,6 +51,7 @@ layui.use(['table', 'dropdown'], function () {
             { field: 'did', fixed: 'left', width: '10%', title: 'ID', sort: true },
             { field: 'departureStation', width: '10%', title: '发站' },
             { field: 'arrTime', width: '10%', title: '到站时间' },
+            { field: 'deliver_date', width: '10%', title: '发货时间' },
             { fixed: 'right', title: '操作', width: '25%', minWidth: 125, toolbar: '#barDemo' }
         ]],
         done: function () {
@@ -166,7 +167,10 @@ layui.use(['table', 'dropdown'], function () {
                                 axios({
                                     url: '/SysDelivery/Edit',
                                     method: 'POST',
-                                    data: field
+                                    data: field,
+                                    headers: {
+                                        'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryVQmB3imziMBCv4zV'
+                                    }
                                 }).then(result => {
                                     /*解析JSON字符串*/
                                     var jsonData = JSON.parse(result.data);
@@ -206,7 +210,7 @@ layui.use(['table', 'dropdown'], function () {
                         layer.msg('查看操作，当前行 ID:' + data.id);
                     } else if (menudata.id === 'del') {
                         console.log(data);
-                        var id = data.id
+                        var id = data.did
                         layer.confirm('真的删除行 [id: ' + data.id + '] 么', function (index) {
                             axios({
                                 url: '/SysDelivery/Del',

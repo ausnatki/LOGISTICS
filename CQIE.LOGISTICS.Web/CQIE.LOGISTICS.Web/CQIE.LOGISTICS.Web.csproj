@@ -185,6 +185,8 @@
     <None Include="wwwroot\js\my_sysuser\SysUser_Add.js" />
     <None Include="wwwroot\js\my_sysuser\SysUser_List.js" />
     <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\lib\assets\js\gsap.min.js" />
+    <None Include="wwwroot\lib\assets\js\script.js" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
