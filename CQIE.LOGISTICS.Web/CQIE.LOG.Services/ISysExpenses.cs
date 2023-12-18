@@ -6,5 +6,8 @@ namespace CQIE.LOG.Services
 {
     public interface ISysExpenses
     {
+
+
+
     }
 }

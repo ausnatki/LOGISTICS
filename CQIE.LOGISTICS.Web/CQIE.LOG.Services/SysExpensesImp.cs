@@ -6,5 +6,6 @@ namespace CQIE.LOG.Services
 {
     public class SysExpensesImp:ISysExpenses
     {
+
     }
 }

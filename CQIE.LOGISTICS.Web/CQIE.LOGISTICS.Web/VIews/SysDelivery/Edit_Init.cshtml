@@ -1,46 +1,130 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@{int U_id = Convert.ToInt32(ViewBag.id);}
+﻿@{CQIE.LOG.Models.Tool.CarTypeCarWaybillShipperUserModel temp = ViewBag.data as CQIE.LOG.Models.Tool.CarTypeCarWaybillShipperUserModel; }
 <div style="padding: 50px;">
-    <form class="layui-form layui-form-pane" action="" lay-filter="Edit-form">
-
-
-        <input type="hidden" name="Id" id="date1" autocomplete="off" class="layui-input">
-
+    <form class="layui-form layui-form-pane">
 
         <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">用户名</label>
-                <div class="layui-input-block">
-                    <input type="text" name="username" id="date1" autocomplete="off" class="layui-input">
+            <div class="layui-form-item">
+                <label class="layui-form-label">发站</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.wayBill.DepartureStation"  autocomplete="off"  class="layui-input"disabled>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">到站</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Shipper_Email" value="@temp.wayBill.ArrivalStation" autocomplete="off" class="layui-input"disabled>
                 </div>
             </div>
         </div>
+
         <div class="layui-form-item">
-            <label class="layui-form-label">邮箱</label>
-            <div class="layui-input-inline">
-                <input type="text" name="email" placeholder="请输入" lay-verify="required" autocomplete="off" class="layui-input">
+
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">车牌号</label>
+                <div class="layui-input-inline">
+                    <select name="State" lay-filter="required">
+                        @{
+                            foreach (var t in temp.cars)
+                            {
+                                <option value="@t.Id">@t.CarNumber</option>
+                            }
+                        }
+                    </select>
+                </div>
             </div>
-            <div class="layui-inline">
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <label class="layui-form-label">到站所属省市（自治区）</label>
+                <div class="layui-input-inline">
+                    <input type="text"value="@temp.wayBill.ProvinceOfArrivalStation" autocomplete="off" class="layui-input"disabled>
+                </div>
+            </div>
+        </div>
+
+        @*托运人信息*@
+        <div class="layui-form-item people">
+            <p>托运人信息</p>
+            <div class="layui-form-item">
+                <label class="layui-form-label">名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Shipper.Name" autocomplete="off"  class="layui-input" disabled>
+                </div>
+
                 <label class="layui-form-label">电话</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="PhoneNumber" autocomplete="off" class="layui-input">
+                    <input type="text" value="@temp.Shipper.Phone" autocomplete="off" class="layui-input" disabled>
                 </div>
             </div>
-            @*<div class="layui-form-mid layui-text-em">请务必填写用户名</div>*@
+            <div class="layui-form-item">
+                <label class="layui-form-label">地址</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Shipper.Address" autocomplete="off" class="layui-input" disabled>
+                </div>
+
+                <label class="layui-form-label">邮编</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Shipper.PostalCode" autocomplete="off" class="layui-input" disabled> 
+                </div>
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Shipper.Email" autocomplete="off" class="layui-input" disabled>
+                </div>
+            </div>
         </div>
+
+        @*收货人信息*@
+        <div class="layui-form-item people">
+            <p>送货人信息</p>
+            <div class="layui-form-item">
+                <label class="layui-form-label">名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Carieer.Name" autocomplete="off" class="layui-input" disabled>
+                </div>
+
+                <label class="layui-form-label">电话</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Carieer.Phone" autocomplete="off" class="layui-input"disabled>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">地址</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Carieer.Address" autocomplete="off" class="layui-input"disabled>
+                </div>
+
+                <label class="layui-form-label">邮编</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Carieer.PostalCode" autocomplete="off" class="layui-input"disabled>
+                </div>
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Carieer.Email" autocomplete="off" class="layui-input"disabled>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <label class="layui-form-label">送货人</label>
+                <div class="layui-input-inline">
+                    <select name="State" lay-filter="required">
+                        @{
+                            foreach (var t in temp.Delivery_Man)
+                            {
+                                <option value="@t.Id">@t.UserName</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+
         <div class="layui-form-item">
             <button class="layui-btn" lay-submit lay-filter="Submit_Edit">确认</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
         </div>
     </form>
 </div>
-
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}

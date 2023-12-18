@@ -14,6 +14,7 @@ namespace CQIE.LOG.Services
         public Task<string> Save_Del_DeliveryAsync(int id);
         public Task<string> Save_Add_DeliveryAsync(CQIE.LOG.Models.Delivery.Delivery_Order order);
 
+        public Task<CQIE.LOG.Models.Tool.CarTypeCarWaybillShipperUserModel> Edit_Init(int id);
 
         //public Task<List<object>> Get_All_DeliveryMan_ListAsync(int Page, int Limit, string name);
         //public Task<object> Get_By_DeliveryMan_IdAsync(int id);

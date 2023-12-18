@@ -235,7 +235,6 @@
 
   <ItemGroup>
     <Folder Include="Views\Account\" />
-    <Folder Include="VIews\SysDelivery\" />
     <Folder Include="wwwroot\js\新文件夹\新文件夹\" />
   </ItemGroup>
 

@@ -78,9 +78,10 @@ namespace CQIE.LOGISTICS.Web.Controllers
         #endregion
 
         #region 修改界面的初始化
-        public IActionResult Edit_Init(int id)
+        public async Task<IActionResult> Edit_Init(int id)
         {
-            ViewBag.id = id;
+           CQIE.LOG.Models.Tool.CarTypeCarWaybillShipperUserModel t = await _sysDelivery.Edit_Init(id);
+            ViewBag.data = t; 
             return View();
         }
         #endregion
@@ -105,15 +106,22 @@ namespace CQIE.LOGISTICS.Web.Controllers
 
         #region 添加功能
 
+        public async Task<IActionResult> Add_Init()
+        {
+            
+            return View();
+        }
+
         [HttpGet]
         public async Task<IActionResult> Add()
         {
-            var htmlcontent = await _tool.RenderToStringAsync("Delivery/Add");
+            await Add_Init();
+            var htmlcontent = await _tool.RenderToStringAsync("SysCar/Add_Init", ViewBag.ddd);
             return Content(htmlcontent);
         }
 
         [HttpPost]
-        public async Task<JsonResult> Add([FromBody] CQIE.LOG.Models.Delivery.Delivery_Order order)
+        public async Task<JsonResult> Add(CQIE.LOG.Models.Delivery.Delivery_Order order)
         {
             var result = await _sysDelivery.Save_Add_DeliveryAsync(order);
 

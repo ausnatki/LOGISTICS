@@ -16,7 +16,6 @@ namespace CQIE.LOG.Models.Expenses
         public int Cost_Id { get; set; }
         public int Delivery_Id { get; set; }
         public decimal Production { get; set; }
-        public  Identity.SysUser SysUser { get; set; }
         public Cost Cost { get; set; }
         public Delivery.Delivery_Order Delivery { get; set; }
     }

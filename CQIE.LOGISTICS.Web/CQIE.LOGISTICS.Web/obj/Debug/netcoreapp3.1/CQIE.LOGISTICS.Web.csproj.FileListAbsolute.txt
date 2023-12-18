@@ -637,7 +637,6 @@ D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\ne
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\netcoreapp3.1\Razor\VIews\SysCarType\Index.cshtml.g.cs
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\netcoreapp3.1\Razor\VIews\SysCar\Edit_Init.cshtml.g.cs
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\netcoreapp3.1\Razor\VIews\SysCar\Index.cshtml.g.cs
-D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\netcoreapp3.1\Razor\VIews\SysDelivery\Add.cshtml.g.cs
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\netcoreapp3.1\Razor\VIews\SysDelivery\Edit_Init.cshtml.g.cs
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\netcoreapp3.1\Razor\VIews\SysDelivery\Index.cshtml.g.cs
 D:\github\LOGISTICS\LOGISTICS\CQIE.LOGISTICS.Web\CQIE.LOGISTICS.Web\obj\Debug\netcoreapp3.1\Razor\VIews\SysCar\Add_Init.cshtml.g.cs

@@ -55,96 +55,6 @@ layui.use(['table', 'dropdown'], function () {
         ]],
         done: function () {
             var id = this.id;
-            // 下拉按钮测试
-            dropdown.render({
-                elem: '#dropdownButton', // 可绑定在任意元素中，此处以上述按钮为例
-                data: [{
-                    id: 'add',
-                    title: '添加'
-                }, {
-                    id: 'update',
-                    title: '编辑'
-                }, {
-                    id: 'delete',
-                    title: '删除'
-                }],
-                // 菜单被点击的事件
-                click: function (obj) {
-                    var checkStatus = table.checkStatus(id)
-                    var data = checkStatus.data; // 获取选中的数据
-                    switch (obj.id) {
-                        case 'add':
-                            axios({
-                                url: '/SysDelivery/Add',
-                                method: 'GET'
-                            }).then(result => {
-                                layer.open({
-                                    title: '添加',
-                                    type: 1,
-                                    area: ['50%', '50%'],
-                                    content: result.data,
-                                    success: function (layero, that) {
-                                        var form = layui.form;
-                                        var layer = layui.layer;
-
-                                        /*     提交事件*/
-                                        form.on('submit(Submit_Add)', function (data) {
-                                            var field = data.field; // 获取表单字段值
-
-                                            // 在打开新对话框之前关闭所有已打开的对话框
-                                            layer.closeAll('dialog');
-
-                                            /* 使用确认对话框*/
-                                            layer.confirm('确定要添加信息吗?', {
-                                                icon: 3,
-                                                title: '提示'
-                                            }, function (index) {
-                                                /* 执行 AJAX 请求*/
-                                                axios({
-                                                    url: '/SysDelivery/Add',
-                                                    method: 'POST',
-                                                    data: field
-                                                }).then(result => {
-                                                    /*解析JSON字符串*/
-                                                    var jsonData = JSON.parse(result.data);
-                                                    handleResponse(jsonData);
-                                                    layer.close(index); // 在处理响应后关闭确认对话框
-                                                }).catch(error => {
-                                                    /*请求失败处理*/
-                                                    var jsonData = JSON.parse(error.data);
-                                                    handleResponse(jsonData);
-                                                });
-                                            });
-
-                                            return false; // 阻止默认 form 跳转
-                                        });
-                                    },
-                                    error: function (xhr, status, error) {
-                                        layer.msg('请求出错', { icon: 2 });
-                                    }
-                                });
-                            }).catch(error => {
-                                layer.msg("打开失败" + error, { icon: 2 })
-                            })
-                            break;
-                        case 'update':
-                            if (data.length !== 1) return layer.msg('请选择一行');
-                            layer.open({
-                                title: '编辑',
-                                type: 1,
-                                area: ['80%', '80%'],
-                                content: '<div style="padding: 16px;">自定义表单元素</div>'
-                            });
-                            break;
-                        case 'delete':
-                            if (data.length === 0) {
-                                return layer.msg('请选择一行');
-                            }
-                            layer.msg('delete event');
-                            break;
-                    }
-                }
-            });
 
             // 行模式
             dropdown.render({
@@ -218,27 +128,27 @@ layui.use(['table', 'dropdown'], function () {
     // 触发单元格工具事件
     table.on('tool(test)', function (obj) { // 双击 toolDouble
         var data = obj.data; // 获得当前行数据
-        console.log("这是data")
-        console.log(data.uid)
+        console.log("这是data32131231")
+        console.log(data.did)
         // console.log(obj)
         if (obj.event === 'edit') {
             axios({
                 url: '/SysDelivery/Edit_Init',
                 method: 'GET',
                 params: {
-                    id: data.id
+                    id: data.did
                 }
             }).then(result => {
                 console.log(result);
                 layer.open({
                     title: '编辑 - 角色:' + data.name,
                     type: 1,
-                    area: ['50%', '50%'],
+                    area: ['90%', '90%'],
                     content: result.data,
                     success: function () {
                         var form = layui.form;
                         var layer = layui.layer;
-
+                        form.render();
                         // 提交事件
                         form.on('submit(Submit_Edit)', function (data) {
                             var field = data.field; // 获取表单字段值
