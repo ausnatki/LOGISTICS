@@ -13,6 +13,7 @@ namespace CQIE.LOG.Models.Expenses
     public class Cost
     {
         public int Id { get; set; }
+       
         public decimal Charge { get; set; }//路桥费
         public decimal Cheer { get; set; }//加邮费
         public decimal Maintain { get; set; }//车辆维护费

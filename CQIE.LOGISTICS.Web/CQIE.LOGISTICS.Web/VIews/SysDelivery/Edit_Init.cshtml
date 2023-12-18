@@ -1,0 +1,132 @@
+﻿@{CQIE.LOG.Models.Tool.CarTypeCarWaybillShipperUserModel temp = ViewBag.data as CQIE.LOG.Models.Tool.CarTypeCarWaybillShipperUserModel; }
+@{int ID = Convert.ToInt32(ViewBag.Id);}
+<div style="padding: 50px;">
+    <form class="layui-form layui-form-pane">
+
+        <input type="text" name="Id" value="@ID" hidden />
+        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <label class="layui-form-label">发站</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.wayBill.DepartureStation"  autocomplete="off"  class="layui-input"disabled>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">到站</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Shipper_Email" value="@temp.wayBill.ArrivalStation" autocomplete="off" class="layui-input"disabled>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">车牌号</label>
+                <div class="layui-input-inline">
+                    <select name="Car_Id" lay-filter="required">
+                        @{
+                            foreach (var t in temp.cars)
+                            {
+                                <option value="@t.Id" @(temp.delivery.Car_Id==t.Id?"selected":"")>@t.CarNumber</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <label class="layui-form-label">到站所属省市（自治区）</label>
+                <div class="layui-input-inline">
+                    <input type="text"value="@temp.wayBill.ProvinceOfArrivalStation" autocomplete="off" class="layui-input"disabled>
+                </div>
+            </div>
+        </div>
+
+        @*托运人信息*@
+        <div class="layui-form-item people">
+            <p>托运人信息</p>
+            <div class="layui-form-item">
+                <label class="layui-form-label">名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Shipper.Name" autocomplete="off"  class="layui-input" disabled>
+                </div>
+
+                <label class="layui-form-label">电话</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Shipper.Phone" autocomplete="off" class="layui-input" disabled>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">地址</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Shipper.Address" autocomplete="off" class="layui-input" disabled>
+                </div>
+
+                <label class="layui-form-label">邮编</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Shipper.PostalCode" autocomplete="off" class="layui-input" disabled> 
+                </div>
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Shipper.Email" autocomplete="off" class="layui-input" disabled>
+                </div>
+            </div>
+        </div>
+
+        @*收货人信息*@
+        <div class="layui-form-item people">
+            <p>送货人信息</p>
+            <div class="layui-form-item">
+                <label class="layui-form-label">名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Carieer.Name" autocomplete="off" class="layui-input" disabled>
+                </div>
+
+                <label class="layui-form-label">电话</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Carieer.Phone" autocomplete="off" class="layui-input"disabled>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">地址</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Carieer.Address" autocomplete="off" class="layui-input"disabled>
+                </div>
+
+                <label class="layui-form-label">邮编</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Carieer.PostalCode" autocomplete="off" class="layui-input"disabled>
+                </div>
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-inline">
+                    <input type="text" value="@temp.Carieer.Email" autocomplete="off" class="layui-input"disabled>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <label class="layui-form-label">送货人</label>
+                <div class="layui-input-inline">
+                    <select name="Delivery_man_Id" lay-filter="required">
+                        @{
+                            foreach (var t in temp.Delivery_Man)
+                            {
+                                <option value="@t.Id" @(temp.delivery.Delivery_man_Id==t.Id?"selected":"")>@t.UserName</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <button class="layui-btn" lay-submit lay-filter="Submit_Edit">确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </form>
+</div>

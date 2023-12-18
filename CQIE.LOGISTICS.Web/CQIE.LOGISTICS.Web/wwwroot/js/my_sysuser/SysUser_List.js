@@ -23,11 +23,10 @@ layui.use(['table', 'dropdown'], function () {
         page: true,
         cols: [[
             { type: 'checkbox', fixed: 'left' },
-            { field: 'uid', fixed: 'left', width: '10%', title: 'ID', sort: true },
-            { field: 'name', width: '10%', title: '用户' },
+            { field: 'uid', fixed: 'left', width: '15%', title: 'ID', sort: true },
+            { field: 'name', width: '20%', title: '用户' },
             { field: 'email', title: '邮箱 <i class="layui-icon layui-icon-tips layui-font-14" lay-event="email-tips" title="该字段开启了编辑功能" style="margin-left: 5px;"></i>', fieldTitle: '邮箱', hide: 0, width: '20%', expandedMode: 'tips', edit: 'text' },
             { field: 'iphone', width: '20%', title: '性别' },
-            { field: 'role', width: '15%', title: '角色' },
             { fixed: 'right', title: '操作', width: '25%', minWidth: 125, toolbar: '#barDemo' }
         ]],
         done: function () {
@@ -221,8 +220,7 @@ layui.use(['table', 'dropdown'], function () {
         console.log("这是data")
         console.log(data.uid)
         // console.log(obj)
-        if (obj.event === 'edit')
-        {
+        if (obj.event === 'edit') {
             axios({
                 url: '/SysUser/Edit_Init',
                 method: 'GET',
@@ -250,7 +248,7 @@ layui.use(['table', 'dropdown'], function () {
                             console.log(result.data.name)
                             //form.val 方法，它用于给指定表单赋值
                             form.val('Edit-form', {
-                                "Id":result.data.data.uid,
+                                "Id": result.data.data.uid,
                                 "username": result.data.data.name, // "name": "value"
                                 "email": result.data.data.email,
                                 "PhoneNumber": result.data.data.iphone,
@@ -347,18 +345,17 @@ layui.use(['table', 'dropdown'], function () {
                                 url: '/SysUser/Del',
                                 method: 'GET',
                                 params: {
-                                   id:uid
+                                    id: uid
                                 }
-                            }).then(result =>{
+                            }).then(result => {
                                 obj.del(); // 删除对应行（tr）的DOM结构
                                 layer.close(index);
                                 // 向服务端发送删除指令
-                                layer.msg("删除成功！", { icon:1 })
-                            }).catch(error =>
-                            {
+                                layer.msg("删除成功！", { icon: 1 })
+                            }).catch(error => {
                                 var jsonData = JSON.parse(error.data);
-                                layer.msg("删除失败" + jsonData.message, {icon:2})
-                            }) 
+                                layer.msg("删除失败" + jsonData.message, { icon: 2 })
+                            })
                         });
                     }
                 },
@@ -398,7 +395,6 @@ layui.use(['table', 'dropdown'], function () {
                 curr: 1 // 重新从第 1 页开始
             },
             where: field
-
         });
         layer.msg('搜索成功<br>此处为静态模拟数据，实际使用时换成真实接口即可');
 

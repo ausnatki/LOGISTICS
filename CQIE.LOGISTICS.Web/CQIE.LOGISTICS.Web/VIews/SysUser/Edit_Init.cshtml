@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{int U_id = Convert.ToInt32(ViewBag.id);}
+<div style="padding: 50px;">
+    <form class="layui-form layui-form-pane" action="" lay-filter="Edit-form">
+
+        <input type="hidden" name="Id" id="date1" autocomplete="off" class="layui-input">
+
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="username" id="date1" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">邮箱</label>
+            <div class="layui-input-inline">
+                <input type="text" name="email" placeholder="请输入" lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">电话</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="PhoneNumber" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            @*<div class="layui-form-mid layui-text-em">请务必填写用户名</div>*@
+        </div>
+        <div class="layui-form-item">
+            <button class="layui-btn" lay-submit lay-filter="Submit_Edit">确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </form>
+</div>
+

@@ -38,6 +38,8 @@ namespace CQIE.LOGISTICS.Web
                     .AddRoles<SysRole>()
                     .AddEntityFrameworkStores<CQIE.LOG.DBManager.LOGDbContext>();
 
+            services.AddRazorPages().AddRazorRuntimeCompilation();//添加实时预览
+
             #region 注册ORM相关类
             services.AddSingleton(typeof(CQIE.LOG.Utility.ConfigService));//singleton格式转换要加typeof
             services.AddScoped(typeof(CQIE.LOG.DBManager.LOGDbContext));
@@ -46,9 +48,13 @@ namespace CQIE.LOGISTICS.Web
             #endregion
 
             services.AddScoped<CQIE.LOG.Services.ISystemMenuService, CQIE.LOG.Services.ISystemMenuServiceImp>();
-            //services.AddScoped<CQIE.LOG.Services.IUserService, CQIE.LOG.Services.IUserServiceImp>();
-            //services.AddScoped<CQIE.LOG.Services.IRoleService, CQIE.LOG.Services.IRoleServiceImp>();
-            //services.AddScoped<CQIE.LOG.Services.ITool, CQIE.LOG.Services.IToolImp>();
+            services.AddScoped<CQIE.LOG.Services.IUserService, CQIE.LOG.Services.UserServiceImp>();
+            services.AddScoped<CQIE.LOG.Services.IRoleService, CQIE.LOG.Services.RoleServiceImp>();
+            services.AddScoped<CQIE.LOG.Services.ITool, CQIE.LOG.Services.IToolImp>();
+            services.AddScoped<CQIE.LOG.Services.ISysWayBill, CQIE.LOG.Services.SysWayBillImp>();
+            services.AddScoped<CQIE.LOG.Services.ISysDelivery, CQIE.LOG.Services.SysDeliveryImp>();
+            services.AddScoped<CQIE.LOG.Services.ISysExpenses, CQIE.LOG.Services.SysExpensesImp>();
+            services.AddScoped<CQIE.LOG.Services.ISysCar, CQIE.LOG.Services.SysCarImp>();
 
 
             //启用内存缓存
@@ -128,6 +134,12 @@ namespace CQIE.LOGISTICS.Web
                 endpoints.MapControllerRoute(
                     name: "default2",
                     pattern: "{controller}/{action}/{id?}");
+
+                // 将所有不匹配的路径导向 404 页面
+                endpoints.MapControllerRoute(
+                    name: "catchAll",
+                    pattern: "{*url}",
+                    defaults: new { controller = "Home", action = "PageNotFound" });
             });
         }
     }

@@ -1,15 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace CQIE.LOGISTICS.Web.Controllers
-{
+{ 
+   
     public class AdminController : Controller
     {
         private static System.Text.StringBuilder m_Resp = new System.Text.StringBuilder();
         private Microsoft.AspNetCore.Identity.UserManager<CQIE.LOG.Models.Identity.SysUser> m_UserManager;
+
+       
         public IActionResult Index2([FromServices] CQIE.LOG.DBManager.IDbManager dbManager)
         {
             return View();
@@ -19,7 +23,7 @@ namespace CQIE.LOGISTICS.Web.Controllers
         {
             m_UserManager = UserManager;
         }
-
+        [Authorize(Roles = "系统管理员")]
         /// <summary>
         /// 创建数据库
         /// </summary>
@@ -97,11 +101,29 @@ namespace CQIE.LOGISTICS.Web.Controllers
 
             var viewerRole = new CQIE.LOG.Models.Identity.SysRole()
             {
-                Name = "只能查看权限",
-                NormalizedName = "只能查看权限"
+                Name = "发货站人员",
+                NormalizedName = "发货站人员"
             };
 
-            dbManager.Ctx.Roles.AddRange(adminRole, viewerRole);
+            var DeliveryRole = new CQIE.LOG.Models.Identity.SysRole()
+            {
+                Name = "送货人员",
+                NormalizedName = "送货人员"
+            };
+            
+            var diaoduRole = new CQIE.LOG.Models.Identity.SysRole()
+            {
+                Name = "调度人员",
+                NormalizedName = "调度人员"
+            };
+            var commitRole = new CQIE.LOG.Models.Identity.SysRole()
+            {
+                Name = "普通角色",
+                NormalizedName = "普通角色"
+            };
+
+
+            dbManager.Ctx.Roles.AddRange(adminRole, viewerRole,DeliveryRole,diaoduRole,commitRole);
             dbManager.Ctx.SaveChanges();
             #endregion
 
@@ -175,6 +197,64 @@ namespace CQIE.LOGISTICS.Web.Controllers
 
             dbManager.Ctx.SystemMenus.Add(system);
             dbManager.Ctx.SaveChanges();
+
+            var system2 = new CQIE.LOG.Models.SystemMenu()
+            {
+                Name = "订单管理",
+                IconClassName = "fa fa-feed",
+                SortOrder = 1,
+                Url = null,
+            };
+            system2.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = view
+            });
+
+            dbManager.Ctx.SystemMenus.Add(system2);
+            dbManager.Ctx.SaveChanges();
+
+            var system3 = new CQIE.LOG.Models.SystemMenu()
+            {
+                Name = "调度管理",
+                IconClassName = "fa fa-feed",
+                SortOrder = 1,
+                Url = null,
+            };
+            system3.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = view
+            });
+
+            dbManager.Ctx.SystemMenus.Add(system3);
+            dbManager.Ctx.SaveChanges();
+
+            var system4 = new CQIE.LOG.Models.SystemMenu()
+            {
+                Name = "车辆管理管理",
+                IconClassName = "fa fa-feed",
+                SortOrder = 1,
+                Url = null,
+            };
+            system4.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = view
+            });
+            dbManager.Ctx.SystemMenus.Add(system4);
+
+            var system5 = new CQIE.LOG.Models.SystemMenu()
+            {
+                Name = "报销管理",
+                IconClassName = "fa fa-feed",
+                SortOrder = 1,
+                Url = null,
+            };
+            system5.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = view
+            });
+            dbManager.Ctx.SystemMenus.Add(system5);
+
+            dbManager.Ctx.SaveChanges();
             m_Resp.AppendLine("................................初始化主功能菜单完成.");
             #endregion
 
@@ -230,10 +310,194 @@ namespace CQIE.LOGISTICS.Web.Controllers
                 Operation = delete
             });
 
+            //账单管理
+            var waybillManager = new CQIE.LOG.Models.SystemMenu()
+            {
+                Name = "账单管理",
+                IconClassName = "fa fa-feed",
+                SortOrder = 2,
+                Url = "/SysWaybill/Index",
+            };
+            waybillManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = view
+            });
+            waybillManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = add
+            });
+            waybillManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = edit
+            });
+            waybillManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = delete
+            });
+
+            //账单添加
+            var waybillAdd = new CQIE.LOG.Models.SystemMenu()
+            {
+                Name = "账单添加",
+                IconClassName = "fa fa-feed",
+                SortOrder = 2,
+                Url = "/SysWaybill/Add",
+            };
+            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = view
+            });
+            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = add
+            });
+            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = edit
+            });
+            waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = delete
+            });
+
+            //账单调度单管理
+            var DeliveryManager = new CQIE.LOG.Models.SystemMenu()
+            {
+                Name = "调度单管理",
+                IconClassName = "fa fa-feed",
+                SortOrder = 1,
+                Url = "/SysDelivery/Index",
+            };
+            DeliveryManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = view
+            });
+            DeliveryManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = add
+            });
+            DeliveryManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = edit
+            });
+            DeliveryManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = delete
+            });
+
+            //送货人员管理
+            var DeliverymanManager = new CQIE.LOG.Models.SystemMenu()
+            {
+                Name = "送货人员管理",
+                IconClassName = "fa fa-feed",
+                SortOrder = 1,
+                Url = "/SysDeliveryMan/Index",
+            };
+            DeliverymanManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = view
+            });
+            DeliverymanManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = add
+            });
+            DeliverymanManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = edit
+            });
+            DeliverymanManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = delete
+            });
+
+            //送货车辆管理
+            var DeliverycarManager = new CQIE.LOG.Models.SystemMenu()
+            {
+                Name = "送货车辆",
+                IconClassName = "fa fa-feed",
+                SortOrder = 1,
+                Url = "/SysCar/Index",
+            };
+            DeliverycarManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = view
+            });
+            DeliverycarManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = add
+            });
+            DeliverycarManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = edit
+            });
+            DeliverycarManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = delete
+            });
+
+            //车辆类别
+            var DeliverycartyeManager = new CQIE.LOG.Models.SystemMenu()
+            {
+                Name = "车辆类别",
+                IconClassName = "fa fa-feed",
+                SortOrder = 1,
+                Url = "/SysCarType/Index",
+            };
+            DeliverycartyeManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = view
+            });
+            DeliverycartyeManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = add
+            });
+            DeliverycartyeManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = edit
+            });
+            DeliverycartyeManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = delete
+            });
+
+            var ExpensesManager = new CQIE.LOG.Models.SystemMenu()
+            {
+                Name = "报销单管理",
+                IconClassName = "fa fa-feed",
+                SortOrder = 1,
+                Url = "/SysExpenses/Index",
+            };
+            ExpensesManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = view
+            });
+            ExpensesManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = add
+            });
+            ExpensesManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = edit
+            });
+            ExpensesManager.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
+            {
+                Operation = delete
+            });
 
             ////
             system.SubMenus.Add(userManager);
             system.SubMenus.Add(roleManager);
+            system2.SubMenus.Add(waybillManager);
+            system2.SubMenus.Add(waybillAdd);
+
+            system3.SubMenus.Add(DeliveryManager);
+            system3.SubMenus.Add(DeliverymanManager);
+            system4.SubMenus.Add(DeliverycarManager);
+            system4.SubMenus.Add(DeliverycartyeManager);
+
+            system5.SubMenus.Add(ExpensesManager);
+
+            
             dbManager.Ctx.SaveChanges();
             m_Resp.AppendLine("................................初始化子功能菜单完成.");
             #endregion

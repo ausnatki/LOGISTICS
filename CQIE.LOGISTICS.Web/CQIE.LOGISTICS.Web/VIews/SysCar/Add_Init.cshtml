@@ -1,0 +1,55 @@
+﻿
+@*@{ List<CQIE.LOG.Models.Delivery.CarType> temp = ViewBag.ddd as List<CQIE.LOG.Models.Delivery.CarType>;}*@
+
+@model List<CQIE.LOG.Models.Delivery.CarType>
+
+
+
+<div style="padding: 50px;">
+    <form class="layui-form layui-form-pane">
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">车牌号</label>
+                <div class="layui-input-block">
+                    <input type="text" name="CarNumber" id="date1" autocomplete="off" class="layui-input" lay-filter="required">
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <label class="layui-form-label">车辆类别</label>
+                <div class="layui-input-inline">
+                    <select name="CarType_Id" lay-filter="required">
+                        @{
+                            foreach (var t in Model)
+                            {
+                                <option value="@t.Id">@t.Name</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <label class="layui-form-label">车辆状态</label>
+                <div class="layui-input-inline">
+                    <select name="State" lay-filter="required">
+                        <option value=""></option>
+                        <option value="0">禁用</option>
+                        <option value="1" selected>启用</option>
+                        <option value="2">维修中</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <button class="layui-btn" lay-submit lay-filter="Submit_Add">确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </form>
+</div>

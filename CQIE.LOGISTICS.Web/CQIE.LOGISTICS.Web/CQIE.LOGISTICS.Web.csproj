@@ -173,11 +173,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\SysRole\Add.cshtml" />
+    <None Include="Views\SysRole\Edit_Init.cshtml" />
+    <None Include="Views\SysRole\Edit_Role_Manage.cshtml" />
+    <None Include="Views\SysRole\Index.cshtml" />
+    <None Include="Views\SysUser\Add.cshtml" />
+    <None Include="Views\SysUser\Edit_Init.cshtml" />
+    <None Include="Views\SysUser\Index.cshtml" />
     <None Include="wwwroot\js\my_layout.js\index.js" />
     <None Include="wwwroot\js\my_sysrole\SysRole_List.js" />
     <None Include="wwwroot\js\my_sysuser\SysUser_Add.js" />
     <None Include="wwwroot\js\my_sysuser\SysUser_List.js" />
     <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\lib\assets\js\gsap.min.js" />
+    <None Include="wwwroot\lib\assets\js\script.js" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
@@ -207,6 +216,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.20" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.20" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.20" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.20">
       <PrivateAssets>all</PrivateAssets>

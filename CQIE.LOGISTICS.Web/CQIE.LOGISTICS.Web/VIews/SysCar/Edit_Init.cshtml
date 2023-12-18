@@ -1,0 +1,53 @@
+﻿@*@model List<CQIE.LOG.Models.Delivery.CarType>*@
+@{ List<CQIE.LOG.Models.Delivery.CarType> temp = ViewBag.ddd as List<CQIE.LOG.Models.Delivery.CarType>;}
+@{ CQIE.LOG.Models.Delivery.Car t = ViewBag.ttt as CQIE.LOG.Models.Delivery.Car;}
+<div style="padding: 50px;">
+    <form class="layui-form layui-form-pane">
+
+        <input type="text" name="Id" value="@t.Id" hidden>
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">车牌号</label>
+                <div class="layui-input-block">
+                    <input type="text" name="CarNumber" id="date1" autocomplete="off" class="layui-input" value="@t.CarNumber.">
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <label class="layui-form-label">车辆类别</label>
+                <div class="layui-input-inline">
+                    <select name="CarType_Id" lay-filter="required">
+                        @{
+                            foreach (var ct in temp)
+                            {
+                                <option value="@ct.Id" @(t.CarType_Id==ct.Id?"selected":"")>@ct.Name</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <label class="layui-form-label">车辆状态</label>
+                <div class="layui-input-inline">
+                    <select name="State" lay-filter="required">
+                        <option value="" ></option>
+                        <option value="0" @(t.CarType_Id==0?"selected":"")>禁用</option>
+                        <option value="1" @(t.CarType_Id==1?"selected":"")>启用</option>
+                        <option value="2" @(t.CarType_Id==2?"selected":"")>维修中</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <button class="layui-btn" lay-submit lay-filter="Submit_Edit">确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </form>
+</div>
