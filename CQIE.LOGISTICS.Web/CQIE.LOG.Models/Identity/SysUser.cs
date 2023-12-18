@@ -10,5 +10,7 @@ namespace CQIE.LOG.Models.Identity
     {
         public string LoginPassword { get; set; }
         public ICollection<SysUserRole> SysUserRoles { get; set; } = new HashSet<SysUserRole>();
+
+        //public Delivery.Delivery_Order Delivery { get; set; }
     }
 }

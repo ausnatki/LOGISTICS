@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,5 +14,7 @@ namespace CQIE.LOG.Services
         /// <param name="viewName"></param>
         /// <returns></returns>
         Task<string> RenderToStringAsync(string viewName);
+
+        Task<string> RenderToStringAsync(string viewName, object model);
     }
 }

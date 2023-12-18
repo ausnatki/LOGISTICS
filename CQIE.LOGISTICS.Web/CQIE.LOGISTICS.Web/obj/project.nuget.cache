@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/e3OAw1uaFKqPwaqU9xrzRaiEKQJ83cyvkBSpdmNA/NbBK232TGclO+ptONNSyPLAs0N1ee2rP7CugDrRwo3/g==",
+  "dgSpecHash": "tYBebWvthfcn1r/U0BsoShJlbtONG/YA3VFigipbz+donIrRjKfwf72klDuorVxLfHWRon9zG7ZXmQ8sn+P1WA==",
   "success": true,
   "projectFilePath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web\\CQIE.LOGISTICS.Web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ausnatki\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

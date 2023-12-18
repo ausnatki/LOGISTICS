@@ -160,19 +160,27 @@ namespace CQIE.LOG.Services
                     }
 
                     //再添加调度单和报销单
+                    var c1 = new CQIE.LOG.Models.Expenses.Cost()
+                    {
+                    };
+                    _dbManger.Ctx.Costs.Add(c1);
+
                     var d1 = new CQIE.LOG.Models.Delivery.Delivery_Order()
                     {
-                        WayBill = waybill
+                        WayBill = waybill,
                     };
                     _dbManger.Ctx.Delivery_Orders.Add(d1);
+                    await _dbManger.Ctx.SaveChangesAsync();
 
                     var e1 = new CQIE.LOG.Models.Expenses.Expenses()
                     {
-                        Delivery = d1
+                        Delivery = d1,
+                        Cost = c1
                     };
                     _dbManger.Ctx.Expenses.Add(e1);
-
                     await _dbManger.Ctx.SaveChangesAsync();
+
+                                       await _dbManger.Ctx.SaveChangesAsync();
                     await transaction.CommitAsync();
                     return JsonSerializer.Serialize(new { success = true, message = "角色创建成功。" });
                 }

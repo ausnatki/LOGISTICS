@@ -16,8 +16,8 @@ namespace CQIE.LOG.DBManager
             {
                 entity.HasKey(c => c.Id);
                 entity.HasOne(c => c.WayBill).WithOne(c => c.Delivery).HasForeignKey<Delivery_Order>(d => d.WayBill_Id);
-                entity.HasOne(c => c.Car).WithMany(c => c.deliveries).HasForeignKey(c => c.Car_Id);
-                entity.HasOne(c => c.Delivery_Man).WithMany(c => c.deliveries).HasForeignKey(c => c.Delivery_man_Id);
+                //entity.HasOne(c => c.Car).WithMany(c => c.deliveries).HasForeignKey(c => c.Car_Id);
+                //entity.HasOne(c => c.Delivery_Man).WithOne(c => c.Delivery).HasForeignKey<Delivery_Order>(c => c.Delivery_man_Id);
             });
 
             modelBuilder.Entity<CQIE.LOG.Models.Delivery.Car>(entity =>
@@ -27,11 +27,6 @@ namespace CQIE.LOG.DBManager
             });
 
             modelBuilder.Entity<CQIE.LOG.Models.Delivery.CarType>(entity =>
-            {
-                entity.HasKey(c => c.Id);
-            });
-
-            modelBuilder.Entity<CQIE.LOG.Models.Delivery.Delivery_Man>(entity =>
             {
                 entity.HasKey(c => c.Id);
             });

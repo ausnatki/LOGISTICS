@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "bnvcpdlulc0s/gAgi1bTQLFbS9g96iI7rlRR/w7ibqzhsBcyT+aA4O6C936je2RJPpzIPtD8VyVO0pxeiTHapQ==",
+  "dgSpecHash": "qOqeQjhRnqpEK/MH38KPkRG4j7RAbdz0iV+wdFz/0XxLjLF8xMe9yQiYggxmlriQB25zSoJQcVa4rp5rAHGnIg==",
   "success": true,
   "projectFilePath": "D:\\github\\LOGISTICS\\LOGISTICS\\CQIE.LOGISTICS.Web\\CQIE.LOG.Services\\CQIE.LOG.Services.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ausnatki\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
@@ -34,7 +35,7 @@
     "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
-    "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.data.sqlclient\\1.1.3\\microsoft.data.sqlclient.1.1.3.nupkg.sha512",
     "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.1.0\\microsoft.dotnet.platformabstractions.2.1.0.nupkg.sha512",
     "C:\\Users\\ausnatki\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.20\\microsoft.entityframeworkcore.3.1.20.nupkg.sha512",

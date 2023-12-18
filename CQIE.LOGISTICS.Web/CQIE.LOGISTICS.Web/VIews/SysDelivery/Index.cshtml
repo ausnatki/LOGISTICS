@@ -1,0 +1,60 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+<!--
+本「综合演示」包含：自定义头部工具栏、获取表格数据、表格重载、自定义模板、单双行显示、单元格编辑、自定义底部分页栏、表格相关事件与操作、与其他组件的结合等相对常用的功能，以便快速掌握 table 组件的使用。
+-->
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="/lib/node_modules/layui/dist/layui.js"></script>
+<script src="/lib/jquery/dist/jquery.js"></script>
+<script src="/lib/node_modules/axios/dist/axios.js"></script>
+<blockquote class="layui-elem-quote layui-text">
+    <h2>送货单管理界面</h2>
+</blockquote>
+
+
+<div style="padding: 16px;">
+
+    <form class="layui-form layui-row layui-col-space16">
+        <div class="layui-col-md4">
+            <div class="layui-input-wrap">
+                <div class="layui-input-prefix">
+                    <i class="layui-icon layui-icon-username"></i>
+                </div>
+                <input type="text" name="A" value="" placeholder="Field A" class="layui-input" lay-affix="clear" id="searchInput">
+            </div>
+        </div>
+        <div class="layui-btn-container layui-col-xs12">
+            <button class="layui-btn" lay-submit lay-filter="demo-table-search">Search</button>
+            <button type="reset" class="layui-btn layui-btn-primary">Clear</button>
+        </div>
+    </form>
+
+    <table class="layui-hide" id="test" lay-filter="test"></table>
+</div>
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" id="dropdownButton">
+            下拉按钮
+            <i class="layui-icon layui-icon-down layui-font-12"></i>
+        </button>
+    </div>
+</script>
+
+<script type="text/html" id="barDemo">
+    <div class="layui-clear-space">
+        <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+        <a class="layui-btn layui-btn-xs" lay-event="more">
+            更多
+            <i class="layui-icon layui-icon-down"></i>
+        </a>
+    </div>
+</script>
+<script src="~/js/my_sysdelivery/SysDelivery_List.js"></script>
+

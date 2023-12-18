@@ -16,10 +16,12 @@ namespace CQIE.LOG.Models.Delivery
         public int WayBill_Id{get;set;}
         public int Delivery_man_Id { get; set; }
         public DateTime Delivery_data { get; set; }        
-        public Car Car { get; set; }
-        public Delivery_Man Delivery_Man { get; set; }
+        //public Car Car { get; set; }
+
+        //public Identity.SysUser Delivery_Man { get; set; }
         public Waybill.WayBill WayBill { get; set; }
+
         public Expenses.Expenses Expenses { get; set; }
-           
+
     }
 }

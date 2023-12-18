@@ -334,7 +334,7 @@ namespace CQIE.LOGISTICS.Web.Controllers
                 Name = "调度单管理",
                 IconClassName = "fa fa-feed",
                 SortOrder = 1,
-                Url = "/SysDelivery/Idex",
+                Url = "/SysDelivery/Index",
             };
             waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
@@ -359,7 +359,7 @@ namespace CQIE.LOGISTICS.Web.Controllers
                 Name = "送货人员管理",
                 IconClassName = "fa fa-feed",
                 SortOrder = 1,
-                Url = "/SysDelivery/man",
+                Url = "/SysDeliveryMan/Index",
             };
             waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
@@ -384,7 +384,7 @@ namespace CQIE.LOGISTICS.Web.Controllers
                 Name = "送货车辆",
                 IconClassName = "fa fa-feed",
                 SortOrder = 1,
-                Url = "/SysDelivery/Car",
+                Url = "/SysCar/Index",
             };
             waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {
@@ -409,7 +409,7 @@ namespace CQIE.LOGISTICS.Web.Controllers
                 Name = "车辆类别",
                 IconClassName = "fa fa-feed",
                 SortOrder = 1,
-                Url = "/SysDelivery/CarType",
+                Url = "/SysCarType/Index",
             };
             waybillAdd.SysMenuOperations.Add(new CQIE.LOG.Models.SysMenuOperation()
             {

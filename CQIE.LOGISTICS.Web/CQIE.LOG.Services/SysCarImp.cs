@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
+using AutoMapper;
 
 namespace CQIE.LOG.Services
 {
@@ -20,13 +21,25 @@ namespace CQIE.LOG.Services
         #region 获得所有车的信息
         public async Task<List<object>> Get_All_Car_ListAsync(int Page, int Limit, string name) 
         {
+
+            //{ type: 'checkbox', fixed: 'left' },
+            //{ field: 'id', fixed: 'left', width: '10%', title: 'ID', sort: true },
+            //{ field: 'carNumber', width: '10%', title: '车牌号' },
+            //{ field: 'state', width: '10%', title: '状态' },
+            //{ field: 'cartype', width: '10%', title: '车辆类别' },
+            //{ fixed: 'right', title: '操作', width: '25%', minWidth: 125, toolbar: '#barDemo' }
             try 
             {
                 int startIndex = (Page - 1) * Limit;
                 var carlist = await(from o in _dbManger.Ctx.Cars
                                     where string.IsNullOrEmpty(name) || o.CarNumber.Contains(name)
-                                    select o)
-                                          .OrderBy(o => o.Id)
+                                    select new
+                                    {
+                                        id = o.Id,
+                                        carNumber = o.CarNumber,
+                                        state = o.State,
+                                        carype = o.CarType.Name
+                                    })
                                           .Skip(startIndex)
                                           .Take(Limit)
                                           .ToListAsync();
@@ -56,15 +69,18 @@ namespace CQIE.LOG.Services
         #endregion
 
         #region 修改车信息
-        public async Task<string> Save_Update_CarManAsync(CQIE.LOG.Models.Delivery.Car order)
+        public async Task<string> Save_Update_CarAsync(CQIE.LOG.Models.Delivery.Car order)
         {
             using (var transaction = _dbManger.Ctx.Database.BeginTransaction()) 
             {
                 try 
                 {
                     var cartype = await _dbManger.Ctx.Cars.Where(c => c.Id == order.Id).FirstOrDefaultAsync() ;
-                    cartype = order;
-                    _dbManger.Ctx.SaveChanges();
+
+                    cartype.CarType_Id = order.CarType_Id;
+                    cartype.CarNumber = order.CarNumber;
+                    cartype.State = order.State;
+                    await _dbManger.Ctx.SaveChangesAsync();
                     transaction.Commit();
                     return JsonSerializer.Serialize(new { success = true, message = "修改成功" });
                 } 
@@ -100,7 +116,7 @@ namespace CQIE.LOG.Services
         #endregion
 
         #region 添加车信息
-        public async Task<string> Save_Add_CarManAsync(CQIE.LOG.Models.Delivery.Car order)
+        public async Task<string> Save_Add_CarAsync(CQIE.LOG.Models.Delivery.Car order)
         {
             using (var transaction = _dbManger.Ctx.Database.BeginTransaction()) 
             {
@@ -129,9 +145,13 @@ namespace CQIE.LOG.Services
             {
                 int startIndex = (Page - 1) * Limit;
                 var carTypelist = await (from o in _dbManger.Ctx.CarTypes
-                                    where string.IsNullOrEmpty(name) || o.Name.Contains(name)
-                                    select o)
-                                          .OrderBy(o => o.Id)
+                                         where string.IsNullOrEmpty(name) || o.Name.Contains(name)
+                                         select new 
+                                         {
+                                             id= o.Id,
+                                             name = o.Name
+                                         })
+                                         
                                           .Skip(startIndex)
                                           .Take(Limit)
                                           .ToListAsync();
@@ -168,7 +188,7 @@ namespace CQIE.LOG.Services
                 try
                 {
                     var cartype = await _dbManger.Ctx.CarTypes.Where(c => c.Id == order.Id).FirstOrDefaultAsync();
-                    cartype = order;
+                    cartype.Name = order.Name;
                     _dbManger.Ctx.SaveChanges();
                     transaction.Commit();
                     return JsonSerializer.Serialize(new { success = true, message = "修改成功" });

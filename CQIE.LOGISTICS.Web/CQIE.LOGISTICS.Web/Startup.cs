@@ -39,6 +39,7 @@ namespace CQIE.LOGISTICS.Web
                     .AddEntityFrameworkStores<CQIE.LOG.DBManager.LOGDbContext>();
 
             services.AddRazorPages().AddRazorRuntimeCompilation();//添加实时预览
+
             #region 注册ORM相关类
             services.AddSingleton(typeof(CQIE.LOG.Utility.ConfigService));//singleton格式转换要加typeof
             services.AddScoped(typeof(CQIE.LOG.DBManager.LOGDbContext));
@@ -53,6 +54,7 @@ namespace CQIE.LOGISTICS.Web
             services.AddScoped<CQIE.LOG.Services.ISysWayBill, CQIE.LOG.Services.SysWayBillImp>();
             services.AddScoped<CQIE.LOG.Services.ISysDelivery, CQIE.LOG.Services.SysDeliveryImp>();
             services.AddScoped<CQIE.LOG.Services.ISysExpenses, CQIE.LOG.Services.SysExpensesImp>();
+            services.AddScoped<CQIE.LOG.Services.ISysCar, CQIE.LOG.Services.SysCarImp>();
 
 
             //启用内存缓存
